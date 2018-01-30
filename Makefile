@@ -5,7 +5,10 @@
 ## makefile
 ##
 
-SRC	=	main.c
+SRC	=	src/main_menu/menu.c		\
+		src/main_menu/my_strcmp.c	\
+		src/main_menu/display_usage.c	\
+		src/main_menu/main.c
 
 OBJ	=	$(SRC:.c=.o)
 
