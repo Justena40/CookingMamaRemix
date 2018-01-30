@@ -24,10 +24,11 @@ int	check_env(char **env)
 	return (1);
 }
 
+//1 => ERROR
+
 int	main(int ac, char **av, char **ae)
 {
-	if (ac == 2 && av[1][0] == '-' && av[1][1] == 'h' &&
-	    av[1][2] == '\0')
+	if (ac == 2 && !my_strcmp(av[1], "-h"))
 		display_usage();
 	else if (ac == 2) {
 		if (check_env(ae))
