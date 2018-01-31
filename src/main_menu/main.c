@@ -30,7 +30,10 @@ int	main(int ac, char **av, char **ae)
 {
 	if (ac == 2 && !my_strcmp(av[1], "-h"))
 		display_usage();
-	else if (ac == 2) {
+	else if (ac != 1) {
+		write(1, "You are stupid, bad argument !\n", 32);
+		return (84);
+	} else {
 		if (check_env(ae))
 			return (84);
 		else

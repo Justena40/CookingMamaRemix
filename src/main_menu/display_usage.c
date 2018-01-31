@@ -10,5 +10,11 @@
 
 void	display_usage(void)
 {
-	return;
+	write(1, "It's time to cook !\n\n", 21);
+	write(1, "USAGE\n", 6);
+	write(1, "    ./my_cook\n\n\n", 17);
+	write(1, "OPTION\n", 7);
+	write(1, "-h  -> print the usage and quit.\n\n\n", 36);
+	write(1, "USER INTERACTIONS\n", 19);
+	write(1, "ESCAPE -> pause the game.\n", 27);
 }
