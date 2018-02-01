@@ -21,55 +21,39 @@ typedef enum scene {
 }scene_e;
 
 
-
-
-
-typedef struct menu
+typedef struct basic_scene
 {
 	scene_e		type;
-	button_t	*menu_button;
-	object_t	*menu_obj;
-}menu_t;
+	button_t	*button;
+	object_t	*obj;
+}basic_scn_t;
 
 
 
+/************Scene game************/
 
 
-
-typedef struct htp
+typedef struct menu_card
 {
-	scene_e		type;
-	button_t	*menu;
-	object_t	*htp_obj;
-	sfText		*text;
-}htp_t;
-
-
-
-
-
-
-typedef struct menu
-{
-	menu_e		type;
+//	menu_e		type; //ENUM À GERER MAIS COMMENT ?
 	object_t	*ingr;
 	struct menu	*next;
-}menu_t;
+}menu_card_t;
 
+/*
 typedef struct ingr
 {
 	ingr_e		type;
 	object_t	*ingr;
 	struct ingr	*next;
 }ingr_t;
+*/
 
 typedef struct game
 {
-	scene_e		type;
-	button_t	*game_button;
-	menu_t		*menu;
-	ingr_t		*ingr;
-	object_t	*game_obj;
+	basic_scn_t	*game_scene;
+	menu_card_t	*menu;
+//	ingr_t		*ingr;
 	music_game_t	*music;
 	text_t		*game_text;
 }game_t;
@@ -78,12 +62,54 @@ typedef struct game
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************Scene pause************/
+
 typedef struct pause
 {
-	scene_e		type;
-	button_t	*pause_button;
-	object_t	*pause_obj;
+	basic_scn_t	*pause_scene;
 }pause_t;
+
+
+
+/************Scene menu************/
+
+typedef struct menu
+{
+	basic_scn	*menu_scene;
+}menu_t;
+
+
+/************Scene how to play************/
+
+typedef struct htp
+{
+	basic_scn_t	*htp_scene;
+	sfText		*text;
+}htp_t;
+
 
 
 #endif		/*SCENE_H_*/
