@@ -8,6 +8,7 @@
 #ifndef MY_H_
 #define MY_H_
 #include "menu.h"
+#include "how_to_play.h"
 
 //---------------------- function in the main_menu ------------------------
 
@@ -21,7 +22,10 @@ void	all_init(sprite_menu_t *i_menu);
 void	draw_pictures_menu(sprite_menu_t *i_menu);
 void	destroy_all_menu(sprite_menu_t *i_menu);
 
-//--------------------- function in the game ----------------------------
+//--------------------- function in the how to play ----------------------------
 
+void	init_sprite(sprite_htp_t *s_htp_t);
+void	init_text(sprite_htp_t *s_htp_t);
+void	init_htp(sprite_htp_t *s_htp_t);
 
 #endif /* MY_H_ */
