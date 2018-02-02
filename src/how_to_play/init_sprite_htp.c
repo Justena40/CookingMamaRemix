@@ -14,7 +14,7 @@ void	init_sprite(sprite_htp_t *s_htp_t)
 {
 	s_htp_t->bk = sfSprite_create();
 	s_htp_t->bk_t = sfTexture_createFromFile("pictures/", NULL);
-	sfSprite_setTexture(s_htp_t->bk, s_htp_t->nb_t, sfTrue);
+	sfSprite_setTexture(s_htp_t->bk, s_htp_t->bk_t, sfTrue);
 }
 
 void	init_text(sprite_htp_t *s_htp_t)
@@ -23,7 +23,7 @@ void	init_text(sprite_htp_t *s_htp_t)
 	return;
 }
 
-void	init_htp(sprite_htp_t *s_htp_s)
+void	init_htp(sprite_htp_t *s_htp_t)
 {
 	init_sprite(s_htp_t);
 }

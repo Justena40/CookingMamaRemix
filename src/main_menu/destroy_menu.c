@@ -13,5 +13,7 @@ void	destroy_all_menu(sprite_menu_t *i_menu)
 {
 	sfSprite_destroy(i_menu->back);
 	sfTexture_destroy(i_menu->menu_b);
+	sfSprite_destroy(i_menu->rest);
+	sfTexture_destroy(i_menu->rest_t);
 	sfRenderWindow_destroy(i_menu->window);
 }

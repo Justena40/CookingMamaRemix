@@ -11,9 +11,6 @@
 #include <unistd.h>
 #include "menu.h"
 #include "my.h"
-#include "scene.h"
-
-//basic_scn_t -> nom de la structure
 
 void	menu(void)
 {
@@ -25,9 +22,9 @@ void	menu(void)
 		return;
 	while (sfRenderWindow_isOpen(i_menu.window)) {
 		while (sfRenderWindow_pollEvent(i_menu.window, &event))
-			sfRenderWindow_close(i_menu.window);
+			analyse_events(event, &i_menu);
 		sfRenderWindow_clear(i_menu.window, sfBlack);
-		draw_pictures_menu(&i_menu);
+		draw_all_sprite(&i_menu);
 	}
 	destroy_all_menu(&i_menu);
 }

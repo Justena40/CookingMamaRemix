@@ -6,7 +6,7 @@
 */
 
 #ifndef HOW_TO_PLAY_H_
-#define HOW_TO_PLAY_H
+#define HOW_TO_PLAY_H_
 
 typedef struct htp_s
 {

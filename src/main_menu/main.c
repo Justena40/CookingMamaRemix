@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "menu.h"
 #include "my.h"
 
 int	check_env(char **env)
