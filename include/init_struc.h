@@ -12,6 +12,6 @@ typedef struct init_button
 {
 	sfVector2f	pos_but;
 	sfVector2f	size;
-}init_but_t
+}init_but_t;
 
 #ifndef		/*INIT_STRUC_H_*/
