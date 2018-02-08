@@ -10,12 +10,10 @@
 #include "menu.h"
 #include "my.h"
 
-void	analyse_events(sfEvent event, sprite_menu_t *i_menu)
+void	analyse_events(sfEvent *event, sfRenderWindow **window)
 {
-	if (event.type == sfEvtKeyPressed) {
-		if (sfKeyboard_isKeyPressed(sfKeyQ) == sfTrue)
-			sfRenderWindow_close(i_menu->window);
+	if (sfKeyboard_isKeyPressed(sfKeyQ) == sfTrue ||
+	    event->type == sfEvtClosed) {
+		sfRenderWindow_close(*window);
 	}
-	if (event.type == sfEvtClosed)
-		sfRenderWindow_close(i_menu->window);
 }

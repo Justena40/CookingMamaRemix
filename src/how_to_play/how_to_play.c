@@ -17,7 +17,7 @@ void	how_to_play(void)
 {
 	sprite_htp_t s_htp_t;
 
-	init_htp(&s_htp_t);
+	//init_htp(&s_htp_t);
 //	while () {		
 //	draw_sprite_htp(&s_htp_t);
 //	}

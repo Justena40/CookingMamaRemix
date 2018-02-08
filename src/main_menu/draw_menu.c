@@ -9,15 +9,17 @@
 #include <SFML/Audio.h>
 #include <unistd.h>
 #include "menu.h"
+#include "scene.h"
 
-void	draw_all_sprite(sprite_menu_t *i_menu)
+void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
 {
-	sfSprite_setPosition(i_menu->rest, i_menu->pos_rest);
-	sfSprite_setPosition(i_menu->ground, i_menu->pos_gr);
-	sfSprite_setPosition(i_menu->panc, i_menu->pos_panc);
-	sfRenderWindow_drawSprite(i_menu->window, i_menu->back, NULL);
-	sfRenderWindow_drawSprite(i_menu->window, i_menu->ground, NULL);
-	sfRenderWindow_drawSprite(i_menu->window, i_menu->rest, NULL);
-	sfRenderWindow_drawSprite(i_menu->window, i_menu->panc, NULL);
-	sfRenderWindow_display(i_menu->window);
+	int		count = 0;
+	object_t	*tmp = i_menu->obj;
+
+	while (tmp != NULL) {
+		sfSprite_setPosition(tmp->sprite, tmp->pos);
+		sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
+		tmp = tmp->next;
+	}
+	sleep(1);
 }

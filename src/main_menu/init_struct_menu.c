@@ -7,44 +7,58 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "tools_cook.h"
 #include "menu.h"
 #include "my.h"
 
-void	init_pictures(sprite_menu_t *i_menu)
+bool	create_node(object_t **obj, char const *pathname,
+                        int pos_x, int pos_y)
 {
-	sfVideoMode mode = {1080, 720, 32};
+	object_t	*tmp = *obj;
+	object_t	*new_object = malloc(sizeof(object_t));
 
-	i_menu->window = sfRenderWindow_create(mode, "MY_COOK",
-					sfResize | sfClose, NULL);
-	i_menu->menu_b = sfTexture_create(1080, 720);
-	sfRenderWindow_setFramerateLimit(i_menu->window, 60);
-	i_menu->menu_b = sfTexture_createFromFile("pictures/sky.png", NULL);
-	i_menu->back = sfSprite_create();
-	sfSprite_setTexture(i_menu->back, i_menu->menu_b, sfTrue);
-	i_menu->rest = sfSprite_create();
-	i_menu->rest_t = sfTexture_createFromFile("pictures/resto_main_menu.png",
-					NULL);
-	sfSprite_setTexture(i_menu->rest, i_menu->rest_t, sfTrue);
-	i_menu->ground = sfSprite_create();
-	i_menu->ground_t = sfTexture_createFromFile("pictures/groung.png", NULL);
-	sfSprite_setTexture(i_menu->ground, i_menu->ground_t, sfTrue);
-	i_menu->panc = sfSprite_create();
-	i_menu->panc_t = sfTexture_createFromFile("pictures/pancarte_menu.png", NULL);
-	sfSprite_setTexture(i_menu->panc, i_menu->panc_t, sfTrue);
+        if (new_object == NULL)
+                return (false);
+        new_object->sprite = sfSprite_create();
+        new_object->texture = sfTexture_createFromFile(
+                pathname, NULL);
+	if (new_object->texture == NULL)
+		return (false);
+        new_object->pos.x = pos_x;
+        new_object->pos.y = pos_y;
+	new_object->next = NULL;
+	if (*obj == NULL)
+		*obj = new_object;
+	else {
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new_object;
+	}
+	sfSprite_setTexture(new_object->sprite, new_object->texture, sfTrue);
+	return (true);
 }
 
-void	init_pos(sprite_menu_t *i_menu)
+int	init_pictures(scene_t *i_menu)
 {
-	i_menu->pos_rest.x = -30;
-	i_menu->pos_rest.y = 100;
-	i_menu->pos_gr.x = 0;
-	i_menu->pos_gr.y = 600;
-	i_menu->pos_panc.x = 600;
-	i_menu->pos_panc.y = 420;
+	int	res = 0;
+
+	if ((res = create_node(&(i_menu->obj), SKY, 0, 0)) == false)
+		return (84);
+	if ((res = create_node(&(i_menu->obj), RESTO_MENU, -30, 100)) == false)
+		return (84);
+	if ((res = create_node(&(i_menu->obj), GROUND, 0, 600)) == false)
+		return (84);
+	if ((res = create_node(&(i_menu->obj), SIGNPOST, 600, 420)) == false)
+		return (84);
+	return (0);
 }
 
-void	all_init(sprite_menu_t *i_menu)
+int	all_init(scene_t *i_menu)
 {
-	init_pictures(i_menu);
-	init_pos(i_menu);
+	i_menu->obj = NULL;
+	if (init_pictures(i_menu) == 84)
+		return (84);
+	return (0);
 }

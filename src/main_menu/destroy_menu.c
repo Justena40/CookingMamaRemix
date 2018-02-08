@@ -7,13 +7,20 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include <stdlib.h>
 #include "menu.h"
+#include "scene.h"
 
-void	destroy_all_menu(sprite_menu_t *i_menu)
+void	destroy_all_menu(scene_t **i_menu)
 {
-	sfSprite_destroy(i_menu->back);
-	sfTexture_destroy(i_menu->menu_b);
-	sfSprite_destroy(i_menu->rest);
-	sfTexture_destroy(i_menu->rest_t);
-	sfRenderWindow_destroy(i_menu->window);
+	scene_t	*tmp = *i_menu;
+
+	while (tmp->obj != NULL) {
+		sfSprite_destroy((*i_menu)->obj->sprite);
+		sfTexture_destroy((*i_menu)->obj->texture);
+		tmp->obj = tmp->obj->next;
+		free((*i_menu)->obj);
+		(*i_menu)->obj = tmp->obj;
+	}
+	free((*i_menu)->obj);
 }

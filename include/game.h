@@ -2,18 +2,19 @@
 ** EPITECH PROJECT, 2018
 ** game.h
 ** File description:
-** different struct for my game object
+** game structure
 */
 
 #ifndef	GAME_H_
 #define	GAME_H_
 
-#include <SFML/Graphics.h>
-#include <SFML/Window/Window.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Audio.h>
+#include "button.h"
+#include "object.h"
+#include "text.h"
+#include "music.h"
+#include "scene.h"
 
-typedef enum menu_enum {
+/*typedef enum menu_enum {
 	CHIKEN,
 	KEBAB,
 	PIZZA,
@@ -26,35 +27,13 @@ typedef enum ingr {
 	STEACK,
 	POTATOES,
 	PASTA,
-}ingr_e;
+	}ingr_e;*/
 
-typedef struct object
+typedef struct game
 {
-	sfSprite	*sprite;
-	sfTexture	*Texture;
-	sfVector2f	pos_object;
-	struct object	*next;
-}object_t;
-
-typedef struct text
-{
-	sfFont		*font;
-	sfVector2f	pos_text;
-	sfColor		color;
-}text_t;
-
-typedef struct button
-{
-	sfVector2f		pos;
-	sfVector2f		size;
-	sfRectangleShape	*rect;
-	struct button		*next;
-}button_t;
-
-typedef struct music
-{
-	sfMusic		*piece;
-	struct music	*next;
-}music_game_t;
+	scene_t	*scenes;
+	music_t	*musics;
+	text_t	*texts;
+}game_t;
 
 #endif		/*GAME_H_*/
