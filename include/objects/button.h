@@ -16,6 +16,7 @@ typedef struct button
 	sfRectangleShape	*rect;
 	sfVector2f		pos;
 	sfVector2f		size;
+	int			(*ptr_but)();
 	struct button		*next;
 }button_t;
 
