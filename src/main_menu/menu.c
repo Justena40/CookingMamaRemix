@@ -32,7 +32,6 @@ void	menu(void)
 		while (sfRenderWindow_pollEvent(window, &event)) {
 			analyse_events(&event, &window);
 		}
-		printf("dqzjidoz\n");
 		sfRenderWindow_clear(window, sfBlack);
 		/*	tmp = i_menu->button;
 		while (tmp != NULL) {

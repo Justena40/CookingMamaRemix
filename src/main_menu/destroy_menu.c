@@ -19,8 +19,6 @@ void	destroy_all_menu(scene_t **i_menu)
 		sfSprite_destroy((*i_menu)->obj->sprite);
 		sfTexture_destroy((*i_menu)->obj->texture);
 		tmp->obj = tmp->obj->next;
-		free((*i_menu)->obj);
 		(*i_menu)->obj = tmp->obj;
 	}
-	free((*i_menu)->obj);
 }
