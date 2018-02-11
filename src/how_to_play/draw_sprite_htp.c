@@ -2,18 +2,20 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** draw all sprite
+** draw all spritre of htp
 */
 
-#include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include <SFML/Graphics.h>
+#include <stdlib.h>
 #include <unistd.h>
-#include "scene.h"
+#include "game.h"
+#include "my.h"
 
-void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
+void	draw_sprite_htp(scene_t *i_htp, sfRenderWindow *window)
 {
-	int		count = 0;
-	object_t	*tmp = i_menu->obj;
+	int count = 0;
+	object_t *tmp = i_htp->obj;
 
 	while (tmp != NULL) {
 		sfSprite_setPosition(tmp->sprite, tmp->pos);

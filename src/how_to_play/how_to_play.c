@@ -7,19 +7,22 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
-#include "how_to_play.h"
+#include "game.h"
 #include "my.h"
 
-//clear de  la fenetre
-//lancer la fonction htp
-
-void	how_to_play(void)
+void	how_to_play(scene_t *i_htp, sfRenderWindow **window, sfEvent *event,
+	int *change_window)
 {
-	sprite_htp_t s_htp_t;
+	int res = 0;
 
-	//init_htp(&s_htp_t);
-//	while () {		
-//	draw_sprite_htp(&s_htp_t);
-//	}
-//destroy tt les sprites
+	res = all_init_htp(i_htp);
+	while (*change_window == HTP) {
+		while (sfRenderWindow_pollEvent(*window, event))
+			sfRenderWindow_close(*window);
+//			anlyse_event_htp(event, window, change_window);
+		sfRenderWindow_clear(*window, sfBlack);
+		draw_sprite_htp(i_htp, *window);
+		sfRenderWindow_display(*window);
+	}
+//	destroy_all_htp(i_htp);
 }

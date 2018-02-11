@@ -7,23 +7,30 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-#include "how_to_play.h"
+#include <stdbool.h>
+#include "tools_cook.h"
+#include "game.h"
 #include "my.h"
 
-void	init_sprite(sprite_htp_t *s_htp_t)
+int	init_pictures_htp(scene_t *i_htp)
 {
-	s_htp_t->bk = sfSprite_create();
-	s_htp_t->bk_t = sfTexture_createFromFile("pictures/", NULL);
-	sfSprite_setTexture(s_htp_t->bk, s_htp_t->bk_t, sfTrue);
+	int res = 0;
+
+	if ((res = create_node(&(i_htp->obj), SKY, 0, 0)) == false)
+		return (84);
+	if ((res = create_node(&(i_htp->obj), GROUND, 0, 600)) == false)
+		return (84);
+	if ((res = create_node(&(i_htp->obj), RESTO_MENU, -30, 100)) == false)
+		return (84);
+	if ((res = create_node(&(i_htp->obj), SIGNPOST, 600, 420)) == false)
+		return (84);
+	return (0);
 }
 
-void	init_text(sprite_htp_t *s_htp_t)
+int	all_init_htp(scene_t *i_htp)
 {
-	//init the text;
-	return;
-}
-
-void	init_htp(sprite_htp_t *s_htp_t)
-{
-	init_sprite(s_htp_t);
+	i_htp->obj = NULL;
+	if (init_pictures_htp(i_htp) == 84)
+		return (84);
+	return (0);
 }

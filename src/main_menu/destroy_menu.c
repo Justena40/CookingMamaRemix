@@ -8,7 +8,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "scene.h"
 
 void	destroy_all_menu(scene_t **i_menu)

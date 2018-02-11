@@ -9,22 +9,30 @@ CC	=	gcc
 
 RM	=	rm -f
 
-DIR_SRC	=	src
-DIR_OBJ	=	$(DIR_SRC)/objects
-DIR_MY	=	$(DIR_SRC)/my
+DIR_SRC	 =	src
+DIR_OBJ	 =	$(DIR_SRC)/objects
+DIR_MY	 =	$(DIR_SRC)/my
+DIR_MENU =	$(DIR_SRC)/main_menu
+DIR_HTP	 =	$(DIR_SRC)/how_to_play
+DIR_SCN	 =	$(DIR_SRC)/init_scene
+DIR_PAU  =	$(DIR_SRC)/pause_game
 
-SRC	=	src/main_menu/menu.c			\
-		src/main_menu/init_struct_menu.c	\
-		src/main_menu/destroy_menu.c		\
-		src/main_menu/draw_menu.c		\
-		src/main_menu/event.c			\
+SRC	=	$(DIR_MENU)/menu.c			\
+		$(DIR_MENU)/init_struct_menu.c		\
+		$(DIR_MENU)/destroy_menu.c		\
+		$(DIR_MENU)/draw_menu.c			\
+		$(DIR_MENU)/event.c			\
+		$(DIR_MENU)/manege_mouse_menu.c		\
 		$(DIR_SRC)/main.c			\
-		src/how_to_play/how_to_play.c		\
-		src/how_to_play/init_sprite_htp.c	\
-		src/init_scene/button_init.c		\
-		src/pause_game/pause.c			\
-		src/pause_game/init_sprite_p.c		\
-		src/pause_game/init_sprite_p.c		\
+		$(DIR_HTP)/how_to_play.c		\
+		$(DIR_HTP)/init_sprite_htp.c		\
+		$(DIR_HTP)/draw_sprite_htp.c		\
+		$(DIR_SCN)/button_init.c		\
+		$(DIR_PAU)/pause.c			\
+		$(DIR_PAU)/init_sprite_p.c		\
+		$(DIR_PAU)/destroy_pause.c		\
+		$(DIR_PAU)/draw_sprite_pause.c		\
+		$(DIR_PAU)/event_pause.c		\
 		$(DIR_MY)/my_putstr.c			\
 		$(DIR_MY)/my_strlen.c			\
 		$(DIR_MY)/my_strcmp.c			\
