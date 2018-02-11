@@ -10,10 +10,11 @@
 #include "menu.h"
 #include "my.h"
 
-void	analyse_events(sfEvent *event, sfRenderWindow **window)
+void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state)
 {
-	if (sfKeyboard_isKeyPressed(sfKeyQ) == sfTrue ||
-	    event->type == sfEvtClosed) {
+	if (event->type == sfEvtClosed ||
+	sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
+		*state = -1;
 		sfRenderWindow_close(*window);
 	}
 }

@@ -18,6 +18,7 @@ int	init_pause(basic_scn_t **pause)
 	int	pause_but3[9] = {10, 420, 100, 50, 10, 120, 50, 255, -1};
 	int	count = 0;
 
+	int	pause_but[9] = {pos.x, pos.y, size.x, size.y, color.Red*4, -1};
 	if (pause_but == NULL)
 		return (ERROR);
 	(*pause)->button = NULL;

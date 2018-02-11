@@ -23,7 +23,7 @@ int	my_strcmp(char const *s1, char const *s2);
 void	menu(void);
 int	all_init(scene_t *i_menu);
 void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window);
-void	analyse_events(sfEvent *event, sfRenderWindow **window);
+void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state);
 void	destroy_all_menu(scene_t **i_menu);
 
 
