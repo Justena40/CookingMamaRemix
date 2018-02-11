@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** draw all sprite
+** draw prite in the function pause
 */
 
 #include <SFML/Graphics.h>
@@ -10,10 +10,10 @@
 #include <unistd.h>
 #include "scene.h"
 
-void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
+void	draw_sprite_pause(scene_t *i_pause, sfRenderWindow *window)
 {
-	int		count = 0;
-	object_t	*tmp = i_menu->obj;
+	int count = 0;
+	object_t *tmp = i_pause->obj;
 
 	while (tmp != NULL) {
 		sfSprite_setPosition(tmp->sprite, tmp->pos);
