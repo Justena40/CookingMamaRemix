@@ -17,7 +17,6 @@ void	pause_game(scene_t *i_pause, sfRenderWindow **window, sfEvent *event,
 {
 	int res = 0;
 
-	res = all_init_pause(i_pause);
 	while (*change_window == PAUSE) {
 		while (sfRenderWindow_pollEvent(*window, event))
 			analyse_event_pause(event, window, change_window);
@@ -25,5 +24,5 @@ void	pause_game(scene_t *i_pause, sfRenderWindow **window, sfEvent *event,
 		draw_sprite_pause(i_pause, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_pause(i_pause);
+	destroy_all_pause(&i_pause);
 }

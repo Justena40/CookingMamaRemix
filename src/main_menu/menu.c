@@ -22,12 +22,8 @@ void	menu(void)
 	int res = 0;
 	sfRenderWindow *window;
 	sfEvent event;
-<<<<<<< HEAD
-	int state = MENU_RESTO;
-=======
 //	int change_window = MENU_RESTO;
 	int change_window = PAUSE;
->>>>>>> 52b8e7d3fabdb1413c964b5cec04362ccc000c38
 
 	window = sfRenderWindow_create(mode, "MY_COOK",
 				       sfResize | sfClose, NULL);
@@ -35,39 +31,26 @@ void	menu(void)
 	res = all_init_menu(i_menu);
 	if (window == 0 || res == 84)
 		return;
+	if (all_init_pause(i_pause) == 84)
+		return;
+	change_window = PAUSE;
 	while (sfRenderWindow_isOpen(window)) {
-<<<<<<< HEAD
-		while (state == MENU_RESTO) {
-			while (sfRenderWindow_pollEvent(window, &event)) {
-				analyse_events(&event, &window, &state);
-			}
-=======
-		pause_game(i_pause, &window, &event, &change_window);
+		if (change_window == PAUSE)
+			pause_game(i_pause, &window, &event, &change_window);
 /*		while (change_window == MENU_RESTO) {
-			while (sfRenderWindow_pollEvent(window, &event))
-				analyse_events_menu(&event, &window, &change_window);
->>>>>>> 52b8e7d3fabdb1413c964b5cec04362ccc000c38
-			sfRenderWindow_clear(window, sfBlack);
-			/*	tmp = i_menu->button;
-				while (tmp != NULL) {
-				sfRenderWindow_drawRectangleShape(window, tmp->rect, NULL);
-<<<<<<< HEAD
-				tmp = tmp->next;
-				}*/
-			draw_all_sprite(i_menu, window);
-			sfRenderWindow_display(window);
+		while (sfRenderWindow_pollEvent(window, &event)) {
+		analyse_events(&event, &window, &change_window);
 		}
-	}
-	destroy_all_menu(&i_menu);
-=======
-			tmp = tmp->next;
-			}*/
-/*			draw_all_sprite(i_menu, window);
-			sfRenderWindow_display(window);
-			//boucle inf qd on ferme la fenetre
+		sfRenderWindow_clear(window, sfBlack);
+		tmp = i_menu->button;
+		while (tmp != NULL) {
+		sfRenderWindow_drawRectangleShape(window, tmp->rect, NULL);
+		tmp = tmp->next;
 		}
-		destroy_all_menu(&i_menu);
+		draw_all_sprite(i_menu, window);
+		sfRenderWindow_display(window);
+		}
 */	}
+//	destroy_all_menu(&i_menu);
 	sfRenderWindow_destroy(window);
->>>>>>> 52b8e7d3fabdb1413c964b5cec04362ccc000c38
 }

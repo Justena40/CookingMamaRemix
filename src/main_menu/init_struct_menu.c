@@ -19,7 +19,7 @@ bool	create_node(object_t **obj, char const *pathname,
 	object_t	*new_object = malloc(sizeof(object_t));
 
         if (new_object == NULL)
-                return (false);
+		return (false);
         new_object->sprite = sfSprite_create();
         new_object->texture = sfTexture_createFromFile(
                 pathname, NULL);

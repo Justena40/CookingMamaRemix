@@ -12,6 +12,10 @@
 void	analyse_event_pause(sfEvent *event, sfRenderWindow **window,
 			int *change_window)
 {
-	//if pour bouton
-	return;
+	if (event->type == sfEvtClosed ||
+	sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
+		*change_window = -1;
+		sfRenderWindow_close(*window);
+	}
+	//return;
 }

@@ -12,12 +12,15 @@
 
 void	destroy_all_pause(scene_t **i_pause)
 {
-	scene_t *tmp = *i_pause;
+	object_t *tmp = (*i_pause)->obj;
+	object_t *obj_tmp = NULL;
 
-	while (tmp->obj != NULL) {
-		sfSprite_destroy((*i_pause)->obj->sprite);
-		sfTexture_destroy((*i_pause)->obj->texture);
-		tmp->obj = tmp->obj->next;
-		(*i_pause)->obj = tmp->obj;
+	while (tmp != NULL) {
+		obj_tmp = tmp;
+		tmp = tmp->next;
+		sfSprite_destroy(obj_tmp->sprite);
+		sfTexture_destroy(obj_tmp->texture);
+		free(obj_tmp);
 	}
+	free(tmp);
 }
