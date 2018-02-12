@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include "menu.h"
 
 void	manege_mouse_menu(sfMouseButtonEvent event, sfRenderWindow *window)
 {

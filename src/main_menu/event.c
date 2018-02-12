@@ -7,7 +7,7 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-#include "my.h"
+#include "menu.h"
 
 void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state)
 {

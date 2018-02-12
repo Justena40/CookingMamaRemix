@@ -5,8 +5,11 @@
 ** main menu
 */
 
+#include <SFML/Graphics.h>
+#include <SFML/Audio.h>
 #include <stdbool.h>
 #include "tools_cook.h"
+#include "menu.h"
 #include "my.h"
 
 static bool	check_env(char **argenv)

@@ -9,6 +9,7 @@
 #include <SFML/Audio.h>
 #include <unistd.h>
 #include "scene.h"
+#include "menu.h"
 
 void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
 {

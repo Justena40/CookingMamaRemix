@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "game.h"
 #include "tools_cook.h"
+#include "pause.h"
 #include "my.h"
 
 int	init_pictures_pause(scene_t *i_pause)
@@ -22,11 +23,11 @@ int	init_pictures_pause(scene_t *i_pause)
 		return (84);
 	if ((res = create_node(&(i_pause->obj), GROUND, 0, 600)) == false)
 		return (84);
-	if ((res = create_node(&(i_pause->obj), RESTO_PA, 1000, 100)) == false)
+	if ((res = create_node(&(i_pause->obj), RESTO_PA, 600, 170)) == false)
 		return (84);
-	if ((res = create_node(&(i_pause->obj), LIGHT, 500, 610)) == false)
+	if ((res = create_node(&(i_pause->obj), LIGHT, 400, 470)) == false)
 		return (84);
-	if ((res = create_node(&(i_pause->obj), LIGHT, 300, 610)) == false)
+	if ((res = create_node(&(i_pause->obj), LIGHT, 50, 470)) == false)
 		return (84);
 	return (0);
 }

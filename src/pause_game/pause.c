@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "game.h"
-#include "my.h"
+#include "pause.h"
 
 void	pause_game(scene_t *i_pause, sfRenderWindow **window, sfEvent *event,
 		int *change_window)

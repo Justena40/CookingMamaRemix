@@ -10,7 +10,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "game.h"
-#include "my.h"
+#include "menu.h"
+#include "htp.h"
+#include "pause.h"
 
 void	menu(void)
 {
@@ -22,8 +24,8 @@ void	menu(void)
 	int res = 0;
 	sfRenderWindow *window;
 	sfEvent event;
-//	int change_window = MENU_RESTO;
-	int change_window = PAUSE;
+	int change_window = MENU_RESTO;
+//	int change_window = PAUSE;
 
 	window = sfRenderWindow_create(mode, "MY_COOK",
 				       sfResize | sfClose, NULL);
@@ -31,26 +33,18 @@ void	menu(void)
 	res = all_init_menu(i_menu);
 	if (window == 0 || res == 84)
 		return;
-	if (all_init_pause(i_pause) == 84)
+	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84)
 		return;
-	change_window = PAUSE;
+	change_window = HTP;
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);
-/*		while (change_window == MENU_RESTO) {
-		while (sfRenderWindow_pollEvent(window, &event)) {
-		analyse_events(&event, &window, &change_window);
+		else if (change_window == MENU_RESTO) {
+			main_menu(i_menu, &window, &event, &change_window);
 		}
-		sfRenderWindow_clear(window, sfBlack);
-		tmp = i_menu->button;
-		while (tmp != NULL) {
-		sfRenderWindow_drawRectangleShape(window, tmp->rect, NULL);
-		tmp = tmp->next;
+		else if (change_window == HTP) {
+			how_to_play(i_htp, &window, &event, &change_window);
 		}
-		draw_all_sprite(i_menu, window);
-		sfRenderWindow_display(window);
-		}
-*/	}
-//	destroy_all_menu(&i_menu);
+	}
 	sfRenderWindow_destroy(window);
 }

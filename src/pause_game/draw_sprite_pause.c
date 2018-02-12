@@ -12,7 +12,6 @@
 
 void	draw_sprite_pause(scene_t *i_pause, sfRenderWindow *window)
 {
-//	int count = 0;
 	object_t *tmp = i_pause->obj;
 
 	while (tmp != NULL) {
@@ -20,13 +19,4 @@ void	draw_sprite_pause(scene_t *i_pause, sfRenderWindow *window)
 	sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
 	tmp = tmp->next;
 	}
-/*	sfSprite_setPosition(tmp->sprite, tmp->pos);
-	sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
-	sfSprite_setPosition(tmp->next->sprite, tmp->next->pos);
-	sfRenderWindow_drawSprite(window, tmp->next->sprite, NULL);
-	sfSprite_setPosition(tmp->sprite, tmp->pos);
-	sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
-	sfSprite_setPosition(tmp->sprite, tmp->pos);
-	sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
-*/
 }

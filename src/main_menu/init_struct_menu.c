@@ -10,7 +10,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "tools_cook.h"
-#include "my.h"
+#include "menu.h"
 
 bool	create_node(object_t **obj, char const *pathname,
                         int pos_x, int pos_y)
@@ -44,6 +44,8 @@ int	init_pictures_menu(scene_t *i_menu)
 	int	res = 0;
 
 	if ((res = create_node(&(i_menu->obj), SKY, 0, 0)) == false)
+		return (84);
+	if ((res = create_node(&(i_menu->obj), WELCOME, 480, 30)) == false)
 		return (84);
 	if ((res = create_node(&(i_menu->obj), GROUND, 0, 600)) == false)
 		return (84);

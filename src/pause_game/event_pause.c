@@ -7,7 +7,7 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-#include "my.h"
+#include "pause.h"
 
 void	analyse_event_pause(sfEvent *event, sfRenderWindow **window,
 			int *change_window)

@@ -10,19 +10,22 @@
 #include <stdbool.h>
 #include "tools_cook.h"
 #include "game.h"
+#include "htp.h"
 #include "my.h"
 
 int	init_pictures_htp(scene_t *i_htp)
 {
 	int res = 0;
 
-	if ((res = create_node(&(i_htp->obj), SKY, 0, 0)) == false)
+	if ((res = create_node(&(i_htp->obj), SKY_HTP, 0, 0)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), GROUND, 0, 600)) == false)
+	if ((res = create_node(&(i_htp->obj), COOKER, 600, 200)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), RESTO_MENU, -30, 100)) == false)
+	if ((res = create_node(&(i_htp->obj), PARCHMENT, 100, 80)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), SIGNPOST, 600, 420)) == false)
+	if ((res = create_node(&(i_htp->obj), HTP_TEXT, 200, 180)) == false)
+		return (84);
+	if ((res = create_node(&(i_htp->obj), ARROW, 0, 0)) == false)
 		return (84);
 	return (0);
 }
