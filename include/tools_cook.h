@@ -38,6 +38,12 @@
 #define HTP_TEXT	"./resources/pictures/htp.png"
 #define ARROW		"./resources/pictures/left_arrow.png"
 
+//------------ GAME ---------------------------------
+
+#define WHOOL		"./resources/pictures/signpost_whool.png"
+#define BACK_GAME	"./resources/pictures/back_game.png"
+#define CASH_REG	"./resources/pictures/caisse.png"
+
 /*------ FONTS ------*/
 
 

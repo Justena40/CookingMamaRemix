@@ -18,6 +18,7 @@ void	define_button(int *arr_but, button_t *but)
 	sfRectangleShape_setPosition(but->rect, but->pos);
 	sfRectangleShape_setSize(but->rect, but->size);
 	sfRectangleShape_setFillColor(but->rect, color);
+//	but->text->font
 }
 
 bool	init_button(int *arr_but, button_t **but)

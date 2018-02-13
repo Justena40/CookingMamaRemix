@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** pause function
+** main function of the game
 */
 
 #include <SFML/Graphics.h>
@@ -10,17 +10,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "game.h"
-#include "pause.h"
+#include "play_game.h"
 
-void	pause_game(scene_t *i_pause, sfRenderWindow **window, sfEvent *event,
-		int *change_window)
+void	game(scene_t *i_game, sfRenderWindow **window, sfEvent *event,
+	int *change_window)
 {
-	while (*change_window == PAUSE) {
+	while (*change_window == GAME) {
 		while (sfRenderWindow_pollEvent(*window, event))
-			analyse_event_pause(event, window, change_window);
+//			analyse_event_game(event, window, change_window);
 		sfRenderWindow_clear(*window, sfBlack);
-		draw_sprite_pause(i_pause, *window);
+//		draw_sprite_game(i_game, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_pause(&i_pause);
+//	destroy_all_game(&i_game);
 }

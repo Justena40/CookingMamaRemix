@@ -16,6 +16,7 @@
 void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
 		int *change_window)
 {
+//	init_button_menu(&i_menu);
 	while (*change_window == MENU_RESTO) {
 		while (sfRenderWindow_pollEvent(*window, event)) {
 			analyse_events(event, window, change_window);
@@ -26,10 +27,3 @@ void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
 	}
 	destroy_all_menu(&i_menu);
 }
-/*		tmp = i_menu->button;
-		while (tmp != NULL) {
-			sfRenderWindow_drawRectangleShape(window, tmp->rect, \
-							  NULL);
-			tmp = tmp->next;
-		}
-*/

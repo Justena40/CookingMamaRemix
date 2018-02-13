@@ -2,18 +2,18 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** destroy all sprite of pause function
+** destroy sprite in the htp function
 */
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include "scene.h"
-#include "pause.h"
+#include "htp.h"
 
-void	destroy_all_pause(scene_t **i_pause)
+void	destroy_all_htp(scene_t **i_htp)
 {
-	object_t *tmp = (*i_pause)->obj;
+	object_t *tmp = (*i_htp)->obj;
 	object_t *obj_tmp = NULL;
 
 	while (tmp != NULL) {

@@ -20,22 +20,22 @@ int	init_pictures_pause(scene_t *i_pause)
 	int res = 0;
 
 	if ((res = create_node(&(i_pause->obj), NIGHT_SKY, 0, 0)) == false)
-		return (84);
+		return (ERROR);
 	if ((res = create_node(&(i_pause->obj), GROUND, 0, 600)) == false)
-		return (84);
+		return (ERROR);
 	if ((res = create_node(&(i_pause->obj), RESTO_PA, 600, 170)) == false)
-		return (84);
+		return (ERROR);
 	if ((res = create_node(&(i_pause->obj), LIGHT, 400, 470)) == false)
-		return (84);
+		return (ERROR);
 	if ((res = create_node(&(i_pause->obj), LIGHT, 50, 470)) == false)
-		return (84);
-	return (0);
+		return (ERROR);
+	return (SUCCESS);
 }
 
 int	all_init_pause(scene_t *i_pause)
 {
 	i_pause->obj = NULL;
-	if (init_pictures_pause(i_pause) == 84)
-		return (84);
-	return (0);
+	if (init_pictures_pause(i_pause) == ERROR)
+		return (ERROR);
+	return (SUCCESS);
 }

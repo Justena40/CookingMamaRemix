@@ -39,27 +39,27 @@ bool	create_node(object_t **obj, char const *pathname,
 	return (true);
 }
 
-int	init_pictures_menu(scene_t *i_menu)
+int	init_pictures_menu(object_t **obj)
 {
 	int	res = 0;
 
-	if ((res = create_node(&(i_menu->obj), SKY, 0, 0)) == false)
+	if ((res = create_node(obj, SKY, 0, 0)) == false)
 		return (84);
-	if ((res = create_node(&(i_menu->obj), WELCOME, 480, 30)) == false)
+	if ((res = create_node(obj, WELCOME, 480, 30)) == false)
 		return (84);
-	if ((res = create_node(&(i_menu->obj), GROUND, 0, 600)) == false)
+	if ((res = create_node(obj, GROUND, 0, 600)) == false)
 		return (84);
-	if ((res = create_node(&(i_menu->obj), RESTO_MENU, -30, 100)) == false)
+	if ((res = create_node(obj, RESTO_MENU, -30, 100)) == false)
 		return (84);
-	if ((res = create_node(&(i_menu->obj), SIGNPOST, 600, 420)) == false)
+	if ((res = create_node(obj, SIGNPOST, 600, 420)) == false)
 		return (84);
 	return (0);
 }
 
-int	all_init_menu(scene_t *i_menu)
+int	all_init_menu(object_t **obj)
 {
-	i_menu->obj = NULL;
-	if (init_pictures_menu(i_menu) == 84)
+	*obj = NULL;
+	if (init_pictures_menu(obj) == 84)
 		return (84);
 	return (0);
 }

@@ -16,6 +16,7 @@ DIR_MENU =	$(DIR_SRC)/main_menu
 DIR_HTP	 =	$(DIR_SRC)/how_to_play
 DIR_SCN	 =	$(DIR_SRC)/init_scene
 DIR_PAU  =	$(DIR_SRC)/pause_game
+DIR_GAME =	$(DIR_SRC)/game
 
 SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_MENU)/init_struct_menu.c		\
@@ -24,10 +25,13 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_MENU)/event.c			\
 		$(DIR_MENU)/manege_mouse_menu.c		\
 		$(DIR_MENU)/main_menu.c			\
+		$(DIR_MENU)/button_menu.c		\
 		$(DIR_SRC)/main.c			\
 		$(DIR_HTP)/how_to_play.c		\
 		$(DIR_HTP)/init_sprite_htp.c		\
 		$(DIR_HTP)/draw_sprite_htp.c		\
+		$(DIR_HTP)/destroy_htp.c		\
+		$(DIR_HTP)/event_htp.c			\
 		$(DIR_SCN)/button_init.c		\
 		$(DIR_PAU)/pause.c			\
 		$(DIR_PAU)/init_sprite_p.c		\
@@ -41,6 +45,8 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_OBJ)/music.c			\
 		$(DIR_OBJ)/object.c			\
 		$(DIR_OBJ)/text.c			\
+		$(DIR_GAME)/game.c			\
+		$(DIR_GAME)/init_sprite_game.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

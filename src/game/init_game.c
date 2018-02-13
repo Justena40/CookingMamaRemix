@@ -6,9 +6,10 @@
 */
 
 #include "tools_cook.h"
-
+/*
 int	game(void)
 {
 	init_scene_
 	return (SUCCESS);
 }
+*/
