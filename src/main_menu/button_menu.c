@@ -18,7 +18,7 @@ int	init_button_menu(button_t *button)
 	int menu_but2[9] = {610, 530, 100, 30, 120, 255, 50, 255, -1}; //couleur fausse
 	int menu_but3[9] = {610, 560, 100, 30, 10, 120, 255, 255, -1}; //couleur fausse
 
-	button = NULL;
+//	button = NULL;
 	if (init_button(menu_but, &button) == false ||
 	    init_button(menu_but2, &button) == false ||
 	    init_button(menu_but3, &button) == false)

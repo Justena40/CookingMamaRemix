@@ -43,6 +43,20 @@
 #define WHOOL		"./resources/pictures/signpost_whool.png"
 #define BACK_GAME	"./resources/pictures/back_game.png"
 #define CASH_REG	"./resources/pictures/caisse.png"
+#define SAUCE_P		"./resources/pictures/saucepan.png"
+#define TAB_ING		"./resources/pictures/post_whool_ingredient.png"
+
+//-------------- INGREDIENTS ----------------------------
+
+#define CHEESE		"./resources/pictures/cheese.png"
+#define DOUGH		"./resources/pictures/dough.png"
+#define EGG		"./resources/pictures/egg.png"
+#define PEPE		"./resources/pictures/peperoni.png"
+#define TOMATO		"./resources/pictures/tomato.png"
+#define BACON		"./resources/pictures/bacon.png"
+#define BREAD		"./resources/pictures/bread.png"
+#define SALAD		"./resources/pictures/salad.png"
+#define STEAK		"./resources/pictures/steak.png"
 
 /*------ FONTS ------*/
 
