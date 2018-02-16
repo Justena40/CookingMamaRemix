@@ -16,7 +16,6 @@
 void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
 		int *change_window)
 {
-//	init_button_menu(&i_menu);
 	while (*change_window == MENU_RESTO) {
 		while (sfRenderWindow_pollEvent(*window, event)) {
 			analyse_events(event, window, change_window);

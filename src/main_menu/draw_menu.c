@@ -22,9 +22,8 @@ void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
 		sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
 		tmp = tmp->next;
 	}
-	printf("tmp_b -> %p", tmp_b);
-//	while (tmp_b != NULL) {
-//		sfRenderWindow_drawRectangleShape(window, tmp_b->rect, NULL);
-//		tmp_b = tmp_b->next;
-//	}
+	while (tmp_b != NULL) {
+		sfRenderWindow_drawRectangleShape(window, tmp_b->rect, NULL);
+		tmp_b = tmp_b->next;
+	}
 }

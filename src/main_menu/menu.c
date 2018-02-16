@@ -39,7 +39,7 @@ void	menu(void)
 	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
 	    all_init_game(&(i_game->obj)) == 84)
 		return;
-	change_window = GAME;
+//	change_window = GAME;
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);

@@ -23,7 +23,6 @@ typedef struct basic_scene
 	scene_e			type;
 	button_t		*button;
 	object_t		*obj;
-	struct basic_scene	*next;
 }scene_t;
 
 #endif 	/*SCENE_H_*/
