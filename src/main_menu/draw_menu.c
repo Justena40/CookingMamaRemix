@@ -13,7 +13,6 @@
 
 void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window)
 {
-	int		count = 0;
 	object_t	*tmp = i_menu->obj;
 	button_t	*tmp_b = i_menu->button;
 

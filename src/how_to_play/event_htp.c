@@ -17,4 +17,6 @@ void	analyse_event_htp(sfEvent *event, sfRenderWindow **window,
 		*change_window = -1;
 		sfRenderWindow_close(*window);
 	}
+	if (event->type == sfEvtMouseButtonPressed)
+		manege_mouse_htp(&event->mouseButton, window, change_window);
 }

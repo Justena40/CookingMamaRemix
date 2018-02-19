@@ -32,12 +32,15 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_HTP)/draw_sprite_htp.c		\
 		$(DIR_HTP)/destroy_htp.c		\
 		$(DIR_HTP)/event_htp.c			\
+		$(DIR_HTP)/manege_mouse_htp.c		\
 		$(DIR_SCN)/button_init.c		\
 		$(DIR_PAU)/pause.c			\
 		$(DIR_PAU)/init_sprite_p.c		\
 		$(DIR_PAU)/destroy_pause.c		\
 		$(DIR_PAU)/draw_sprite_pause.c		\
 		$(DIR_PAU)/event_pause.c		\
+		$(DIR_PAU)/button_pause.c		\
+		$(DIR_PAU)/manege_mouse_pause.c		\
 		$(DIR_MY)/my_putstr.c			\
 		$(DIR_MY)/my_strlen.c			\
 		$(DIR_MY)/my_strcmp.c			\

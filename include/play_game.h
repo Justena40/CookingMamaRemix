@@ -16,5 +16,6 @@ void	game(scene_t *i_game, sfRenderWindow **window, sfEvent *event, int *change_
 void	analyse_event_game(sfEvent *event, sfRenderWindow **window, int *change_window);
 void	draw_sprite_game(scene_t *i_game, sfRenderWindow *window);
 void	destroy_all_game(scene_t **i_game);
+void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window, int *change_window);
 
 #endif /* PLAY_GAME_H_ */

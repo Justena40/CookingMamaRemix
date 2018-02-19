@@ -20,5 +20,4 @@ void	how_to_play(scene_t *i_htp, sfRenderWindow **window, sfEvent *event,
 		draw_sprite_htp(i_htp, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_htp(&i_htp);
 }

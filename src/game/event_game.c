@@ -7,11 +7,16 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include "tools_cook.h"
 #include "play_game.h"
 
 void	analyse_event_game(sfEvent *event, sfRenderWindow **window,
 			int *change_window)
 {
+	if (event->type == sfEvtKeyPressed) {
+		if (sfKeyboard_isKeyPressed(sfKeyEscape) == sfTrue)
+			*change_window = PAUSE;
+	}
 	if (event->type == sfEvtClosed ||
 	    sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
 		*change_window = -1;

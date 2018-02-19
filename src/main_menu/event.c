@@ -7,7 +7,7 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-#include "menu.h"
+#include "play_game.h"
 
 void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state)
 {
@@ -16,6 +16,6 @@ void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state)
 		*state = -1;
 		sfRenderWindow_close(*window);
 	}
-	//	if (event->type == sfEvtMouseButtonPressed)
-//		manege_mouse_menu(event->mouseButton);
+	if (event->type == sfEvtMouseButtonPressed)
+		manege_mouse_menu(&event->mouseButton, *window, state);
 }

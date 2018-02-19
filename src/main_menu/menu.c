@@ -39,7 +39,9 @@ void	menu(void)
 	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
 	    all_init_game(&(i_game->obj)) == 84)
 		return;
-//	change_window = GAME;
+	if (init_button_pause(&(i_pause->button)) == 84)
+		return;
+	change_window = MENU_RESTO;
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);
@@ -52,5 +54,8 @@ void	menu(void)
 		else if (change_window = GAME)
 			game(i_game, &window, &event, &change_window);
 	}
+	destroy_all_htp(&i_htp);
+	destroy_all_pause(&i_pause);
+	destroy_all_menu(&i_menu);
 	sfRenderWindow_destroy(window);
 }

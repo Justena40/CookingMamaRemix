@@ -22,5 +22,4 @@ void	pause_game(scene_t *i_pause, sfRenderWindow **window, sfEvent *event,
 		draw_sprite_pause(i_pause, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_pause(&i_pause);
 }

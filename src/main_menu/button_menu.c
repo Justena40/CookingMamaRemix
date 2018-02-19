@@ -14,14 +14,18 @@
 
 int	init_button_menu(button_t **button)
 {
-	int menu_but[9] = {610, 500, 100, 30, 255, 120, 50, 255, -1}; //couleur fausse
-	int menu_but2[9] = {610, 530, 100, 30, 120, 255, 50, 255, -1}; //couleur fausse
-	int menu_but3[9] = {610, 560, 100, 30, 10, 120, 255, 255, -1}; //couleur fausse
+	int menu_but[9] = {655, 635, 100, 30, 255, 120, 50, 10, -1}; //couleur fausse
+	int menu_but2[9] = {655, 600, 100, 30, 120, 255, 50, 10, -1}; //couleur fausse
+	int menu_but3[9] = {655, 565, 100, 30, 10, 120, 255, 10, -1}; //couleur fausse
 
 	*button = NULL;
-	if (init_button(menu_but, button) == false ||
-	    init_button(menu_but2, button) == false ||
-	    init_button(menu_but3, button) == false)
+	if (init_button(menu_but, button/*, "PLAY"*/) == false ||
+	    init_button(menu_but2, button/*, "HOW TO PLAY"*/) == false ||
+	    init_button(menu_but3, button/*, "QUIT"*/) == false)
 		return (ERROR);
 	return (SUCCESS);
 }
+
+//bouton 1 -> quit
+//bouton 2 -> HTP
+//bouton 3 -> play

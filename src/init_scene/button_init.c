@@ -21,7 +21,7 @@ void	define_button(int *arr_but, button_t *but)
 //	but->text->font
 }
 
-bool	init_button(int *arr_but, button_t **but)
+bool	init_button(int *arr_but, button_t **but/*, char *name_but*/)
 {
 	button_t	*tmp = *but;
 	button_t	*new_button = malloc(sizeof(button_t));

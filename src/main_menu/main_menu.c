@@ -24,5 +24,4 @@ void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
 		draw_all_sprite(i_menu, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_menu(&i_menu);
 }

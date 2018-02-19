@@ -11,12 +11,14 @@
 #include <SFML/Graphics/RectangleShape.h>
 #include <SFML/System/Vector2.h>
 
+#include "text.h"
+
 typedef struct button
 {
 	sfRectangleShape	*rect;
 	sfVector2f		pos;
 	sfVector2f		size;
-	struct text		*text;
+	text_t			*text;
 	int			(*ptr_but)();
 	struct button		*next;
 }button_t;

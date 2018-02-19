@@ -17,4 +17,6 @@ void	analyse_event_pause(sfEvent *event, sfRenderWindow **window,
 		*change_window = -1;
 		sfRenderWindow_close(*window);
 	}
+	if (event->type == sfEvtMouseButtonPressed)
+		manege_mouse_pause(&event->mouseButton, window, change_window);
 }
