@@ -20,26 +20,24 @@ void	menu(void)
 	scene_t *i_menu = malloc(sizeof(scene_t));
 	scene_t *i_pause = malloc(sizeof(scene_t));
 	scene_t *i_htp = malloc(sizeof(scene_t));
-	scene_t *i_game = malloc(sizeof(scene_t));
+	scene_m_t *i_game = malloc(sizeof(scene_t));
 	button_t *tmp = NULL;
 	sfVideoMode mode = {1080, 720, 32};
-	int res = 0;
-	int res2 = 0;
 	sfRenderWindow *window;
 	sfEvent event;
 	int change_window = MENU_RESTO;
 
+	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
+	init_game_obj_catch(&(i_game->ingr)) == 84 ||
+	init_game_obj_uncatch(&(i_game->obj)) == 84 ||
+	all_init_menu(&(i_menu->obj)) == 84 ||
+	init_button_menu(&(i_menu->button)) == 84 ||
+	init_button_pause(&(i_pause->button)) == 84)
+		return;
 	window = sfRenderWindow_create(mode, "MY_COOK",
 				       sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(window, 60);
-	res = all_init_menu(&(i_menu->obj));
-	res2 = init_button_menu(&(i_menu->button));
-	if (window == 0 || res == 84)
-		return;
-	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
-	    all_init_game(&(i_game->obj)) == 84)
-		return;
-	if (init_button_pause(&(i_pause->button)) == 84)
+	if (window == 0)
 		return;
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)

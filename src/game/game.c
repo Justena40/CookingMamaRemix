@@ -12,7 +12,7 @@
 #include "game.h"
 #include "play_game.h"
 
-void	game(scene_t *i_game, sfRenderWindow **window, sfEvent *event,
+void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 	int *change_window)
 {
 	while (*change_window == GAME) {

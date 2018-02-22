@@ -34,8 +34,16 @@ bool	create_node(object_t **obj, char const *pathname,
 
         if (new_object == NULL)
 		return (false);
-	if (init_obj(new_object, pathname, pos_x, pos_y) == false)
+//	if (init_obj(new_object, pathname, pos_x, pos_y) == false)
+//		return (false);
+	new_object->sprite = sfSprite_create();
+        new_object->texture = sfTexture_createFromFile(
+                pathname, NULL);
+	if (new_object->texture == NULL)
 		return (false);
+        new_object->pos.x = pos_x;
+        new_object->pos.y = pos_y;
+	new_object->next = NULL;
 	if (*obj == NULL)
 		*obj = new_object;
 	else {
@@ -60,7 +68,7 @@ int	init_pictures_menu(object_t **obj)
 		return (84);
 	if ((res = create_node(obj, RESTO_MENU, -30, 100)) == false)
 		return (84);
-	if ((res = create_node(obj, SIGNPOST, 600, 370)) == false)
+	if ((res = create_node(obj, SIGNPOST, 600, 420)) == false)
 		return (84);
 	return (0);
 }

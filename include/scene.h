@@ -29,7 +29,7 @@ typedef struct menu_scene
 {
 	scene_e			type;
 	button_t		*button;
-//	object_t		*;
+	object_t		*ingr;
 	object_t		*obj;
 }scene_m_t;
 
