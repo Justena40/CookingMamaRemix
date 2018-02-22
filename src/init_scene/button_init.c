@@ -22,7 +22,7 @@ void	define_button(int *arr_but, button_t *but, char *name_but)
 	sfRectangleShape_setSize(but->rect, but->size);
 	sfRectangleShape_setFillColor(but->rect, color_but);
 	sfText_setFont(but->text->text, but->text->font);
-	sfText_setCharacterSize(but->text->text, 15);
+	sfText_setCharacterSize(but->text->text, 20);
 	sfText_setColor(but->text->text, color_letter);
 	sfText_setPosition(but->text->text, but->pos);
 	sfText_setString(but->text->text, name_but);

@@ -23,6 +23,7 @@ void	draw_sprite_pause(scene_t *i_pause, sfRenderWindow *window)
 	}
 	while (tmp_b != NULL) {
 		sfRenderWindow_drawRectangleShape(window, tmp_b->rect, NULL);
+		sfRenderWindow_drawText(window, tmp_b->text->text, NULL);
 		tmp_b = tmp_b->next;
 	}
 }
