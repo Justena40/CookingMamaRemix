@@ -17,10 +17,9 @@ void	game(scene_t *i_game, sfRenderWindow **window, sfEvent *event,
 {
 	while (*change_window == GAME) {
 		while (sfRenderWindow_pollEvent(*window, event))
-			analyse_event_game(event, window, change_window);
+			analyse_event_game(event, window, change_window, i_game);
 		sfRenderWindow_clear(*window, sfBlack);
 		draw_sprite_game(i_game, *window);
 		sfRenderWindow_display(*window);
 	}
-	destroy_all_game(&i_game);
 }

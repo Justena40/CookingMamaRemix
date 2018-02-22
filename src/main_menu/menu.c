@@ -54,8 +54,6 @@ void	menu(void)
 		else if (change_window = GAME)
 			game(i_game, &window, &event, &change_window);
 	}
-	destroy_all_htp(&i_htp);
-	destroy_all_pause(&i_pause);
-	destroy_all_menu(&i_menu);
+	destroy_all(&i_htp, &i_pause, &i_menu, &i_game);
 	sfRenderWindow_destroy(window);
 }

@@ -9,6 +9,9 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include "menu.h"
+#include "play_game.h"
+#include "htp.h"
+#include "pause.h"
 #include "scene.h"
 
 void	destroy_all_menu(scene_t **i_menu)
@@ -21,4 +24,12 @@ void	destroy_all_menu(scene_t **i_menu)
 		tmp->obj = tmp->obj->next;
 		(*i_menu)->obj = tmp->obj;
 	}
+}
+
+void	destroy_all(scene_t **i_htp, scene_t **i_pause, scene_t **i_menu, scene_t **i_game)
+{
+	destroy_all_htp(i_htp);
+	destroy_all_pause(i_pause);
+	destroy_all_menu(i_menu);
+	destroy_all_game(i_game);
 }

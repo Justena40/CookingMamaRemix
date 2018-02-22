@@ -25,4 +25,13 @@ typedef struct basic_scene
 	object_t		*obj;
 }scene_t;
 
+typedef struct menu_scene
+{
+	scene_e			type;
+	button_t		*button;
+	object_t		*;
+	object_t		*obj;
+}scene_m_t;
+
+
 #endif 	/*SCENE_H_*/

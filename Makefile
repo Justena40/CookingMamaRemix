@@ -44,6 +44,7 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_MY)/my_putstr.c			\
 		$(DIR_MY)/my_strlen.c			\
 		$(DIR_MY)/my_strcmp.c			\
+		$(DIR_MY)/my_strdup.c			\
 		$(DIR_OBJ)/button.c			\
 		$(DIR_OBJ)/music.c			\
 		$(DIR_OBJ)/object.c			\
@@ -53,6 +54,9 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_GAME)/event_game.c		\
 		$(DIR_GAME)/draw_sprite_game.c		\
 		$(DIR_GAME)/destroy_game.c		\
+		$(DIR_GAME)/create_menu.c		\
+		$(DIR_GAME)/check_bad_order_ingr.c	\
+		$(DIR_GAME)/manege_mouse_ingredient.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

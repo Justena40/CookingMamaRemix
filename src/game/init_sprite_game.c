@@ -50,11 +50,11 @@ int	init_pictures_game(object_t **obj)
 		return (ERROR);
 	if ((res = create_node(obj, CASH_REG, 0, 350)) == false)
 		return (ERROR);
-	if ((res = create_node(obj, SAUCE_P, 650, 450)) == false)
-		return (ERROR);
 	if ((res = create_node(obj, TAB_ING, 530, 0)) == false)
 		return (ERROR);
 	if (init_ingredients(obj) == ERROR)
+		return (ERROR);
+	if ((res = create_node(obj, SAUCE_P, 650, 450)) == false)
 		return (ERROR);
 	return (SUCCESS);
 }

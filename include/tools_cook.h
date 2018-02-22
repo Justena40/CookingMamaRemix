@@ -12,6 +12,7 @@
 
 #define SUCCESS	0
 #define ERROR		84
+#define MALLOC_ERROR	NULL
 
 /*********** RESOURCES ************/
 

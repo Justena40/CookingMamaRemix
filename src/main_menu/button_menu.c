@@ -25,7 +25,3 @@ int	init_button_menu(button_t **button)
 		return (ERROR);
 	return (SUCCESS);
 }
-
-//bouton 1 -> quit
-//bouton 2 -> HTP
-//bouton 3 -> play

@@ -16,7 +16,7 @@ void	draw_sprite_game(scene_t *i_game, sfRenderWindow *window)
 	object_t *tmp = i_game->obj;
 
 	while (tmp != NULL) {
-		sfSprite_setPosition(tmp->sprite, tmp->pos);
+//		sfSprite_setPosition(tmp->sprite, tmp->pos);
 		sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
 		tmp = tmp->next;
 	}

@@ -40,8 +40,9 @@ int	main(int argc, char **argv, char **argenv)
 	if (argc == 2 && my_strcmp(argv[1], "-h") == 0)
 	  display_usage();
 	else if (argc == 1) {
-		if (check_env(argenv))
+		if (check_env(argenv)) {
 			menu();
+		}
 		else
 			return (ERROR);
 	} else {

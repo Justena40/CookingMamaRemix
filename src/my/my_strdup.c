@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "my.h"
 
-char	*my_strndup(char const *src)
+char	*my_strdup(char const *src)
 {
 	char	*dest;
 	int	count = 0;
