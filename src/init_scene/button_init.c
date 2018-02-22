@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "my.h"
 #include "text.h"
 #include "scene.h"
 

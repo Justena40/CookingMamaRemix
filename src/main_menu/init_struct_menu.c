@@ -68,7 +68,7 @@ int	init_pictures_menu(object_t **obj)
 		return (84);
 	if ((res = create_node(obj, RESTO_MENU, -30, 100)) == false)
 		return (84);
-	if ((res = create_node(obj, SIGNPOST, 600, 420)) == false)
+	if ((res = create_node(obj, SIGNPOST, 600, 370)) == false)
 		return (84);
 	return (0);
 }

@@ -11,7 +11,7 @@
 #include "scene.h"
 #include "play_game.h"
 
-void	destroy_all_game(scene_t **i_game)
+void	destroy_all_game(scene_m_t **i_game)
 {
 	object_t *tmp = (*i_game)->obj;
 	object_t *obj_tmp = NULL;

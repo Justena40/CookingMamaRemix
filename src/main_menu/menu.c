@@ -20,7 +20,7 @@ void	menu(void)
 	scene_t *i_menu = malloc(sizeof(scene_t));
 	scene_t *i_pause = malloc(sizeof(scene_t));
 	scene_t *i_htp = malloc(sizeof(scene_t));
-	scene_m_t *i_game = malloc(sizeof(scene_t));
+	scene_m_t *i_game = malloc(sizeof(scene_m_t));
 	button_t *tmp = NULL;
 	sfVideoMode mode = {1080, 720, 32};
 	sfRenderWindow *window;
@@ -28,11 +28,11 @@ void	menu(void)
 	int change_window = MENU_RESTO;
 
 	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
-	init_game_obj_catch(&(i_game->ingr)) == 84 ||
-	init_game_obj_uncatch(&(i_game->obj)) == 84 ||
 	all_init_menu(&(i_menu->obj)) == 84 ||
 	init_button_menu(&(i_menu->button)) == 84 ||
-	init_button_pause(&(i_pause->button)) == 84)
+	init_button_pause(&(i_pause->button)) == 84 ||
+	init_game_obj_catch(&(i_game->ingr)) == 84 ||
+	init_game_obj_uncatch(&(i_game->obj)) == 84)
 		return;
 	window = sfRenderWindow_create(mode, "MY_COOK",
 				       sfResize | sfClose, NULL);

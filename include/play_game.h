@@ -16,12 +16,12 @@
 int	init_game_obj_uncatch(object_t **obj);
 int	init_game_obj_catch(object_t **ingr);
 void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event, int *change_window);
-//void	analyse_event_game(sfEvent *event, sfRenderWindow **window, int *change_window);
+void	analyse_event_game(sfEvent *event, sfRenderWindow **window, int *change_window, scene_m_t *i_game);
 void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window);
-void	destroy_all_game(scene_t **i_game);
-//void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window, int *change_wind//ow);
+void	destroy_all_game(scene_m_t **i_game);
+void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window, int *change_window);
 void	create_tab_menu(void);
 void	fill_tab_menu(char **tab_menu);
-//void	manege_mouse_ingredient(sfMouseButtonEvent *event, sfRenderWindow *window);
+void	manege_mouse_ingredient(sfMouseButtonEvent *event, sfRenderWindow *window, scene_m_t *i_game);
 
 #endif /* PLAY_GAME_H_ */

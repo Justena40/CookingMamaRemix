@@ -19,6 +19,6 @@ void	destroy_all_menu(scene_t **i_menu);
 void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
 		  int *change_window);
 int	init_button_menu(button_t **but);
-void	destroy_all(scene_t **i_htp, scene_t **i_pause, scene_t **i_menu, scene_t **i_game);
+void	destroy_all(scene_t **i_htp, scene_t **i_pause, scene_t **i_menu, scene_m_t **i_game);
 
 #endif /* MENU_H_ */
