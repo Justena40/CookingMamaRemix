@@ -41,7 +41,6 @@ void	menu(void)
 		return;
 	if (init_button_pause(&(i_pause->button)) == 84)
 		return;
-	change_window = MENU_RESTO;
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);
