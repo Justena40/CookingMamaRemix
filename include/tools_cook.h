@@ -61,5 +61,6 @@
 
 /*------ FONTS ------*/
 
+#define	FONT		"./resources/fonts/Eraser.ttf"
 
 #endif /*TOOLS_COOK_H_*/

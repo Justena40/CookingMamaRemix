@@ -18,10 +18,10 @@ int	init_button_pause(button_t **button_p)
 	int pause_but2[9] = {290, 300, 100, 60, 120, 255, 50, 255, -1};
 	int pause_but3[9] = {410, 300, 100, 60, 10, 120, 255, 255, -1};
 
-	*button_p = NULL;
+	*button_p = NULL;/*
 	if (init_button(pause_but, button_p) == false ||
 	    init_button(pause_but2, button_p) == false ||
 	    init_button(pause_but3, button_p) == false)
-		return (ERROR);
+	    return (ERROR);*/
 	return (SUCCESS);
 }

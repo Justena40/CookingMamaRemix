@@ -14,6 +14,7 @@
 
 typedef struct text
 {
+	sfText		*text;
 	sfFont		*font;
 	sfVector2f	pos;
 	sfColor		color;
