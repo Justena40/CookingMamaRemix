@@ -17,7 +17,7 @@ void	analyse_event_game(sfEvent *event, sfRenderWindow **window,
 		if (sfKeyboard_isKeyPressed(sfKeyEscape) == sfTrue)
 			*change_window = PAUSE;
 	}
-	if (event->type == sfEvtMouseButtonPressed)
+	//if (event->type == sfEvtMouseButtonPressed)
 		manege_mouse_ingredient(&event->mouseButton, *window, i_game);
 	if (event->type == sfEvtClosed ||
 	    sfKeyboard_isKeyPressed(sfKeyQ) == 1) {

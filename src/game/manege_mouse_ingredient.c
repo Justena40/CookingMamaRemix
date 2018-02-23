@@ -7,55 +7,27 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include <stdbool.h>
 #include "scene.h"
 #include "tools_cook.h"
 #include "play_game.h"
 
-int	mouse_first_line(sfVector2i *mouse_ingr, scene_m_t *i_game, sfRenderWindow *window,
-	int *bool)
+object_t	*position_mouse_ingredient(sfVector2i *mouse_ingr,
+					   scene_m_t *i_game)
 {
-	object_t *tmp = i_game->obj;
+	object_t *tmp = i_game->ingr;
+	sfIntRect rect;
 
-	if (mouse_ingr->x >= 600 && mouse_ingr->x <= 700
-	    && mouse_ingr->y >= 50 && mouse_ingr->y <= 150 && bool == 0) {
-/*		while (tmp && tmp->pos.x != 600 && tmp->pos.y != 50)
-			tmp = tmp->next;
-*/		*bool = 1;
+	while (tmp) {
+		rect = sfSprite_getTextureRect(tmp->sprite);
+		rect.top = tmp->pos.y;
+		rect.left = tmp->pos.x;
+		if (sfIntRect_contains(&rect, mouse_ingr->x,
+				mouse_ingr->y) == sfTrue)
+			return (tmp);
+		tmp = tmp->next;
 	}
-	else if (mouse_ingr->x >= 750 && mouse_ingr->x <= 850
-		 && mouse_ingr->y >= 50 && mouse_ingr->y <= 150) {
-	}
-	else if (mouse_ingr->x >= 900 && mouse_ingr->x <= 1050
-		 && mouse_ingr->y >= 50 && mouse_ingr->y <= 150) {
-	}
-	return (*bool);
-}
-
-void	mouse_second_line(sfVector2i *mouse_ingr)
-{
-	if (mouse_ingr->x >= 600 && mouse_ingr->y <= 700
-	    && mouse_ingr->y >= 150 && mouse_ingr->y <= 250) {
-	}
-	else if (mouse_ingr->x >= 750 && mouse_ingr->x <= 850
-		 && mouse_ingr->y >= 150 && mouse_ingr->y <= 250) {
-	}
-	else if (mouse_ingr->x >= 900 && mouse_ingr->x <= 1050
-		 && mouse_ingr->y >= 150 && mouse_ingr->y <= 250) {
-	}
-}
-
-void	mouse_third_line(sfVector2i *mouse_ingr)
-{
-	if (mouse_ingr->x >= 600 && mouse_ingr->x <= 700
-	    && mouse_ingr->y >= 250 && mouse_ingr->y <= 350) {
-		//texture = pos souris
-	}
-	else if (mouse_ingr->x >= 750 && mouse_ingr->x <= 850
-		 && mouse_ingr->y >= 250 && mouse_ingr->y <= 350) {
-	}
-	else if (mouse_ingr->x >= 900 && mouse_ingr->x <= 1050
-		 && mouse_ingr->y >= 250 && mouse_ingr->y <= 350) {
-	}
+	return (NULL);
 }
 
 void	manege_mouse_ingredient(sfMouseButtonEvent *event,
@@ -63,26 +35,17 @@ void	manege_mouse_ingredient(sfMouseButtonEvent *event,
 {
 	sfVector2i mouse_ingr = sfMouse_getPositionRenderWindow(window);
 	sfVector2f pos_mouse = {mouse_ingr.x, mouse_ingr.y};
-	static int bool = 0;
-	object_t *tmp = i_game->obj;
+	static object_t *catch_ingredient = NULL;
 
-	if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue && bool == 0) {
-		bool = mouse_first_line(&mouse_ingr, i_game, window, &bool);
-		mouse_second_line(&mouse_ingr);
-		mouse_third_line(&mouse_ingr);
+	if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue &&
+	    catch_ingredient == NULL)
+		catch_ingredient = position_mouse_ingredient(&mouse_ingr, i_game);
+	if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue &&
+	    catch_ingredient != NULL) {
+		catch_ingredient->pos.x = mouse_ingr.x;
+		catch_ingredient->pos.y = mouse_ingr.y;
+		sfSprite_setPosition(catch_ingredient->sprite, pos_mouse);
 	}
-	else
-		bool = 0;
-	if (bool != 0)
-		sfSprite_setPosition(tmp->sprite, pos_mouse);
+        if (sfMouse_isButtonPressed(sfMouseLeft) == sfFalse)
+		catch_ingredient = NULL;
 }
-
-//cheese
-//dough
-//egg
-//pepe
-//tomato
-//bacon
-//bread
-//salad
-//salad
