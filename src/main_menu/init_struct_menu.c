@@ -43,6 +43,8 @@ bool	create_node(object_t **obj, char const *pathname,
 		return (false);
         new_object->pos.x = pos_x;
         new_object->pos.y = pos_y;
+        new_object->save_pos.x = new_object->pos.x;
+        new_object->save_pos.y = new_object->pos.y;
 	new_object->next = NULL;
 	if (*obj == NULL)
 		*obj = new_object;

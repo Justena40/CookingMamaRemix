@@ -17,6 +17,7 @@ typedef struct object
 	sfSprite	*sprite;
 	sfTexture	*texture;
 	sfVector2f	pos;
+	sfVector2f	save_pos;
 	struct object	*next;
 }object_t;
 
