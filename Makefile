@@ -55,8 +55,8 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_GAME)/draw_sprite_game.c		\
 		$(DIR_GAME)/destroy_game.c		\
 		$(DIR_GAME)/create_menu.c		\
-		$(DIR_GAME)/check_bad_order_ingr.c	\
 		$(DIR_GAME)/manege_mouse_ingredient.c	\
+		$(DIR_GAME)/timer_game.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

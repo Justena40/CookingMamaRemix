@@ -18,7 +18,7 @@ typedef enum menu {
 typedef struct all_menu
 {
 	menu_e		type;
-	char		*menu[5];
+	char		*ingr[5];
 }menu_t;
 
 #endif /* RECIPE_H_ */

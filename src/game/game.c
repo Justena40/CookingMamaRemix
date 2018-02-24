@@ -19,6 +19,7 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 		while (sfRenderWindow_pollEvent(*window, event))
 			analyse_event_game(event, window, change_window, i_game);
 		sfRenderWindow_clear(*window, sfBlack);
+		timer_game(event, window, i_game);
 		draw_sprite_game(i_game, *window);
 		sfRenderWindow_display(*window);
 	}
