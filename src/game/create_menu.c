@@ -5,11 +5,8 @@
 ** crete tab where are menu and ingredients
 */
 
-#include <stdlib.h>
 #include <unistd.h>
-#include "tools_cook.h"
 #include "recipe.h"
-#include "play_game.h"
 #include "my.h"
 
 void	create_tab_menu(menu_t arr_menu[4])

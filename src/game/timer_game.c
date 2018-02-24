@@ -5,6 +5,7 @@
 ** timer while
 */
 
+#include <SFML/System/Clock.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "tools_cook.h"
@@ -35,19 +36,17 @@ int	done_recipe(sfEvent *event, sfRenderWindow **window,
 }
 
 
-int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game)
+int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
+		menu_t *tab_menu)
 {
 	int order = 0;
 	int res = 0;
-	menu_t tab_menu[4];
 	int find_recipe = 0;
 
-	create_tab_menu(tab_menu);
-//	while () {
-		find_recipe = rand() % 4;
-		if ((res = done_recipe(event, window, i_game, &(tab_menu[find_recipe]))) == 0)
-			order++;
-		printf("order -> %d\n", order);
-//	}
+	find_recipe = rand() % 4;
+	if ((res = done_recipe(event, window, i_game,
+			&(tab_menu[find_recipe]))) == 0)
+		order++;
+	manege_mouse_ingredient(&event->mouseButton, *window, i_game);
 	return (SUCCESS);
 }

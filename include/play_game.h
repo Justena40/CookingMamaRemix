@@ -14,6 +14,8 @@
 #include "scene.h"
 #include "recipe.h"
 
+#define	END_TIMER		5
+
 int	init_game_obj_uncatch(object_t **obj);
 int	init_game_obj_catch(object_t **ingr);
 void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
@@ -28,6 +30,7 @@ void	create_tab_menu(menu_t arr_menu[4]);
 void	fill_tab_menu(char **tab_menu);
 void	manege_mouse_ingredient(sfMouseButtonEvent *event,
 				sfRenderWindow *window, scene_m_t *i_game);
-int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game);
+int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
+	menu_t *tab_menu);
 
 #endif /* PLAY_GAME_H_ */
