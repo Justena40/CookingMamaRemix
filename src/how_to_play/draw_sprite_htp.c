@@ -9,7 +9,6 @@
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "game.h"
 #include "htp.h"
 
 void	draw_sprite_htp(scene_t *i_htp, sfRenderWindow *window)

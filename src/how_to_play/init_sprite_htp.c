@@ -9,7 +9,6 @@
 #include <SFML/Graphics.h>
 #include <stdbool.h>
 #include "tools_cook.h"
-#include "game.h"
 #include "htp.h"
 #include "my.h"
 

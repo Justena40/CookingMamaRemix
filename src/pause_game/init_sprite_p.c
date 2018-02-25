@@ -10,7 +10,6 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "game.h"
 #include "tools_cook.h"
 #include "pause.h"
 #include "my.h"

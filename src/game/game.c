@@ -9,7 +9,6 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "game.h"
 #include "play_game.h"
 
 void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
@@ -18,7 +17,7 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 	sfClock	*clock = sfClock_create();
 	sfTime	time;
 	menu_t tab_menu[4];
-	int	second = 0;
+	static int	second = 0;
 
 	create_tab_menu(tab_menu);
 	while (*change_window == GAME) {

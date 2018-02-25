@@ -7,7 +7,6 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
-#include "game.h"
 #include "htp.h"
 
 void	how_to_play(scene_t *i_htp, sfRenderWindow **window, sfEvent *event,

@@ -9,7 +9,6 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "game.h"
 #include "menu.h"
 #include "tools_cook.h"
 

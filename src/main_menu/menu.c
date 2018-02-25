@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "tools_cook.h"
-#include "game.h"
 #include "menu.h"
 #include "htp.h"
 #include "pause.h"

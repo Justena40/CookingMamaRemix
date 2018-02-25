@@ -14,14 +14,12 @@
 
 int	check_bad_ing(menu_t *recipe, int *ingr)
 {
-//	if ()
-//		return (ERROR);
+	
 	return (SUCCESS);
 }
 
 int	done_recipe(sfEvent *event, sfRenderWindow **window,
 		    scene_m_t *i_game, menu_t *recipe) {
-
 	int res = 0;
 	int ingr = 0;
 
@@ -47,6 +45,5 @@ int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
 	if ((res = done_recipe(event, window, i_game,
 			&(tab_menu[find_recipe]))) == 0)
 		order++;
-	manege_mouse_ingredient(&event->mouseButton, *window, i_game);
 	return (SUCCESS);
 }
