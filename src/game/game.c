@@ -12,12 +12,12 @@
 #include "play_game.h"
 
 void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
-	     int *change_window)
+	int *change_window)
 {
-	sfClock	*clock = sfClock_create();
-	sfTime	time;
+	sfClock *clock = sfClock_create();
+	sfTime time;
 	menu_t tab_menu[4];
-	static int	second = 0;
+	static int second = 0;
 
 	create_tab_menu(tab_menu);
 	while (*change_window == GAME) {
@@ -26,7 +26,7 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 		time = sfClock_getElapsedTime(clock);
 		second = time.microseconds / 1000000;
 		analyse_event_game(event, window, change_window,
-				   &second);
+				&second);
 		sfRenderWindow_clear(*window, sfBlack);
 		draw_sprite_game(i_game, *window);
 		sfRenderWindow_display(*window);

@@ -11,10 +11,10 @@
 #include "play_game.h"
 
 static void	close_event(sfEvent *event, sfRenderWindow **window,
-			    int *change_window)
+			int *change_window)
 {
 	if (event->type == sfEvtClosed ||
-	    sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
+	sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
 		*change_window = -1;
 		sfRenderWindow_close(*window);
 	}
@@ -29,7 +29,7 @@ static void	pause_event(sfEvent *event, int *change_window)
 }
 
 void	analyse_event_game(sfEvent *event, sfRenderWindow **window,
-			   int *change_window, int *second)
+			int *change_window, int *second)
 {
 	while (sfRenderWindow_pollEvent(*window, event)) {
 		pause_event(event, change_window);

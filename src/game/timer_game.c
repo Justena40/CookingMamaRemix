@@ -14,12 +14,12 @@
 
 int	check_bad_ing(menu_t *recipe, int *ingr)
 {
-	
 	return (SUCCESS);
 }
 
 int	done_recipe(sfEvent *event, sfRenderWindow **window,
-		    scene_m_t *i_game, menu_t *recipe) {
+		scene_m_t *i_game, menu_t *recipe)
+{
 	int res = 0;
 	int ingr = 0;
 
@@ -32,7 +32,6 @@ int	done_recipe(sfEvent *event, sfRenderWindow **window,
 	}
 	return (SUCCESS);
 }
-
 
 int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
 		menu_t *tab_menu)

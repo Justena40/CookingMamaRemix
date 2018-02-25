@@ -17,7 +17,7 @@
 #define	END_TIMER		5
 
 int	init_scene(scene_t *i_menu, scene_t *i_pause, scene_t *i_htp,
-		   scene_m_t *i_game);
+		scene_m_t *i_game);
 int	init_game_obj_uncatch(object_t **obj);
 int	init_game_obj_catch(object_t **ingr);
 void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,

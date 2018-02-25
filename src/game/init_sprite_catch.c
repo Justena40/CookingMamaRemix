@@ -41,7 +41,7 @@ int	init_ingredients_second(object_t **ingr)
 		(*ingr)->type = TOMATO_E;
 		return (ERROR);
 	}
-	if (create_node(ingr, BACON, 900, 150) == false)  {
+	if (create_node(ingr, BACON, 900, 150) == false) {
 		(*ingr)->type = BACON_E;
 		return (ERROR);
 	}
@@ -70,7 +70,7 @@ int	init_game_obj_catch(object_t **ingr)
 	*ingr = NULL;
 	if (init_ingredients_one(ingr) == ERROR ||
 	init_ingredients_second(ingr) == ERROR ||
-   	init_ingredients_third(ingr) == ERROR)
+	init_ingredients_third(ingr) == ERROR)
 		return (ERROR);
 	return (SUCCESS);
 }
