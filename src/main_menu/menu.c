@@ -9,13 +9,14 @@
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "tools_cook.h"
 #include "game.h"
 #include "menu.h"
 #include "htp.h"
 #include "pause.h"
 #include "play_game.h"
 
-void	menu(void)
+int	menu(void)
 {
 	scene_t *i_menu = malloc(sizeof(scene_t));
 	scene_t *i_pause = malloc(sizeof(scene_t));
@@ -27,18 +28,13 @@ void	menu(void)
 	sfEvent event;
 	int change_window = MENU_RESTO;
 
-	if (all_init_pause(i_pause) == 84 || all_init_htp(i_htp) == 84 ||
-	all_init_menu(&(i_menu->obj)) == 84 ||
-	init_button_menu(&(i_menu->button)) == 84 ||
-	init_button_pause(&(i_pause->button)) == 84 ||
-	init_game_obj_catch(&(i_game->ingr)) == 84 ||
-	init_game_obj_uncatch(&(i_game->obj)) == 84)
-		return;
+	if (init_scene(i_menu, i_pause, i_htp, i_game) == ERROR)
+		return(ERROR);
 	window = sfRenderWindow_create(mode, "MY_COOK",
 				       sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(window, 60);
 	if (window == 0)
-		return;
+		return(ERROR);
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);
@@ -53,4 +49,5 @@ void	menu(void)
 	}
 	destroy_all(&i_htp, &i_pause, &i_menu, &i_game);
 	sfRenderWindow_destroy(window);
+	return (SUCCESS);
 }

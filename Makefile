@@ -34,6 +34,7 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_HTP)/event_htp.c			\
 		$(DIR_HTP)/manege_mouse_htp.c		\
 		$(DIR_SCN)/button_init.c		\
+		$(DIR_SCN)/scene.c			\
 		$(DIR_PAU)/pause.c			\
 		$(DIR_PAU)/init_sprite_p.c		\
 		$(DIR_PAU)/destroy_pause.c		\

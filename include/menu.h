@@ -9,7 +9,7 @@
 #define MENU_H_
 #include "scene.h"
 
-void	menu(void);
+int	menu(void);
 int	init_pictures_menu(object_t **obj);
 int	all_init_menu(object_t **obj);
 void	draw_all_sprite(scene_t *i_menu, sfRenderWindow *window);
