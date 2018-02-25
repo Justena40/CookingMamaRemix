@@ -51,7 +51,8 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_OBJ)/object.c			\
 		$(DIR_OBJ)/text.c			\
 		$(DIR_GAME)/game.c			\
-		$(DIR_GAME)/init_sprite_game.c		\
+		$(DIR_GAME)/init_sprite_catch.c		\
+		$(DIR_GAME)/init_sprite_uncatch.c	\
 		$(DIR_GAME)/event_game.c		\
 		$(DIR_GAME)/draw_sprite_game.c		\
 		$(DIR_GAME)/destroy_game.c		\
