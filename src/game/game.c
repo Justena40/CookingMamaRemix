@@ -22,20 +22,17 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 
 	create_tab_menu(tab_menu);
 	while (*change_window == GAME) {
-		while (second < END_TIMER) {
-			time = sfClock_getElapsedTime(clock);
-			second = time.microseconds / 1000000;
-			while (sfRenderWindow_pollEvent(*window, event)) {
-				analyse_event_game(event, window, change_window, i_game);
-				if (!sfRenderWindow_isOpen(*window))
-					second = END_TIMER;
-			}
-			sfRenderWindow_clear(*window, sfBlack);
-			draw_sprite_game(i_game, *window);
-			sfRenderWindow_display(*window);
-			timer_game(event, window, i_game, tab_menu);
-		}
-		*change_window = MENU_RESTO;
+		if (second >= END_TIMER)
+			*change_window = MENU_RESTO;
+		time = sfClock_getElapsedTime(clock);
+		second = time.microseconds / 1000000;
+		analyse_event_game(event, window, change_window,
+				   &second);
+		sfRenderWindow_clear(*window, sfBlack);
+		draw_sprite_game(i_game, *window);
+		sfRenderWindow_display(*window);
+		timer_game(event, window, i_game, tab_menu);
 	}
+	//FREE TAB_MENU
 	sfClock_destroy(clock);
 }
