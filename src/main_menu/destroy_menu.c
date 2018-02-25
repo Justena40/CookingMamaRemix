@@ -26,7 +26,8 @@ void	destroy_all_menu(scene_t **i_menu)
 	}
 }
 
-void	destroy_all(scene_t **i_htp, scene_t **i_pause, scene_t **i_menu, scene_m_t **i_game)
+void	destroy_all(scene_t **i_htp, scene_t **i_pause,
+		scene_t **i_menu, scene_m_t **i_game)
 {
 	destroy_all_htp(i_htp);
 	destroy_all_pause(i_pause);

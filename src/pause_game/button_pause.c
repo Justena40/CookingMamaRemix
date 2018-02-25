@@ -20,8 +20,8 @@ int	init_button_pause(button_t **button_p)
 
 	*button_p = NULL;
 	if (init_button(pause_but, button_p, "MENU") == false ||
-	    init_button(pause_but2, button_p, "CONTINUE") == false ||
-	    init_button(pause_but3, button_p, "QUIT") == false)
-	    return (ERROR);
+	init_button(pause_but2, button_p, "CONTINUE") == false ||
+	init_button(pause_but3, button_p, "QUIT") == false)
+		return (ERROR);
 	return (SUCCESS);
 }

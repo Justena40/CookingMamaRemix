@@ -28,12 +28,12 @@ int	menu(void)
 	int change_window = MENU_RESTO;
 
 	if (init_scene(i_menu, i_pause, i_htp, i_game) == ERROR)
-		return(ERROR);
+		return (ERROR);
 	window = sfRenderWindow_create(mode, "MY_COOK",
-				       sfResize | sfClose, NULL);
+				sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(window, 60);
 	if (window == 0)
-		return(ERROR);
+		return (ERROR);
 	while (sfRenderWindow_isOpen(window)) {
 		if (change_window == PAUSE)
 			pause_game(i_pause, &window, &event, &change_window);

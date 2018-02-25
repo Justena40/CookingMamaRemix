@@ -13,7 +13,7 @@ void	analyse_event_htp(sfEvent *event, sfRenderWindow **window,
 			int *change_window)
 {
 	if (event->type == sfEvtClosed ||
-	    sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
+	sfKeyboard_isKeyPressed(sfKeyQ) == 1) {
 		*change_window = -1;
 		sfRenderWindow_close(*window);
 	}

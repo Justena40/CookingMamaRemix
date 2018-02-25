@@ -11,7 +11,7 @@
 #include "play_game.h"
 
 void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window,
-		       int *change_window)
+		int *change_window)
 {
 	sfVector2i mouse_menu;
 

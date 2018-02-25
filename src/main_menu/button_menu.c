@@ -20,8 +20,8 @@ int	init_button_menu(button_t **button)
 
 	*button = NULL;
 	if (init_button(menu_but, button, "QUIT") == false ||
-	    init_button(menu_but2, button, "HOW TO PLAY") == false ||
-	    init_button(menu_but3, button, "PLAY") == false)
+	init_button(menu_but2, button, "HOW TO PLAY") == false ||
+	init_button(menu_but3, button, "PLAY") == false)
 		return (ERROR);
 	return (SUCCESS);
 }
