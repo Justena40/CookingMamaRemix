@@ -29,7 +29,7 @@ void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window,
 			int *change_window);
 void	create_tab_menu(menu_t arr_menu[4]);
 void	fill_tab_menu(char **tab_menu);
-int	manege_mouse_ingredient(sfMouseButtonEvent *event,
+ingr_e	manege_mouse_ingredient(sfMouseButtonEvent *event,
 				sfRenderWindow *window, scene_m_t *i_game);
 int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
 	menu_t *tab_menu);

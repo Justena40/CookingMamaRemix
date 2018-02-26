@@ -20,21 +20,22 @@ int	check_bad_ing(menu_t *recipe, int *ingr)
 int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
 		menu_t *tab_menu)
 {
-	int	check_ingr = -1;
+	ingr_e	ingr_catch = NO_CATCH_E;
 	int order = 0;
 	int ingr = 0;
-	int find_recipe = 0;
+	int recipe = 0;
 
-	find_recipe = rand() % 4;
-	while (check_ingr != END_E) {
-		manege_mouse_ingredient(&event->mouseButton, *window, i_game);
-		if (check_bad_ing(&(tab_menu[find_recipe]), &ingr) == ERROR) {
-			find_recipe = rand() % 4;
+	recipe = rand() % 4;
+	while (tab_menu[recipe].ingr[ingr] != END_E) {
+		ingr_catch = manege_mouse_ingredient(
+			&event->mouseButton, *window, i_game);
+		if (tab_menu[recipe].ingr[ingr] != ingr_catch &&
+		tab_menu[recipe].ingr[ingr] != NO_CATCH_E) {
+			order = rand() % 4;
 			ingr = 0;
-		} else {
+		}
+		else if (tab_menu[recipe].ingr[ingr] == ingr_catch)
 			ingr++;
-			check_ingr = tab_menu[find_recipe][];
-			}
 	}
 	order++;
 	return (SUCCESS);
