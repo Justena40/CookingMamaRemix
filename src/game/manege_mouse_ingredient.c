@@ -30,6 +30,15 @@ object_t	*position_mouse_ingredient(sfVector2i *mouse_ingr,
 	return (NULL);
 }
 
+static int	move_ingr(object_t *catch_ingr, sfVector2i mouse_ingr,
+	sfVector2f pos_mouse)
+{
+	catch_ingredient->pos.x = mouse_ingr.x;
+	catch_ingredient->pos.y = mouse_ingr.y;
+	sfSprite_setPosition(catch_ingredient->sprite, pos_mouse);
+	return (catch_ingr->type);
+}
+
 void	manege_mouse_ingredient(sfMouseButtonEvent *event,
 				sfRenderWindow *window, scene_m_t *i_game)
 {
@@ -43,10 +52,10 @@ void	manege_mouse_ingredient(sfMouseButtonEvent *event,
 			position_mouse_ingredient(&mouse_ingr, i_game);
 	if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue &&
 	catch_ingredient != NULL) {
-		catch_ingredient->pos.x = mouse_ingr.x;
-		catch_ingredient->pos.y = mouse_ingr.y;
-		sfSprite_setPosition(catch_ingredient->sprite, pos_mouse);
+		return (move_ingr(catch_ingr, mouse_ingr, pos_mouse));
 	}
-	if (sfMouse_isButtonPressed(sfMouseLeft) == sfFalse)
+	else if (sfMouse_isButtonPressed(sfMouseLeft) == sfFalse) {
 		catch_ingredient = NULL;
+		return (NO_CATCH_E);
+	}
 }

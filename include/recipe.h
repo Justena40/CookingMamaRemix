@@ -8,6 +8,8 @@
 #ifndef RECIPE_H_
 #define RECIPE_H_
 
+#include "object.h"
+
 typedef enum menu {
 	PIZZA,
 	LASAGNA,
@@ -18,7 +20,7 @@ typedef enum menu {
 typedef struct all_menu
 {
 	menu_e		type;
-	char		*ingr[5];
+	ingr_e		ingr[6];
 }menu_t;
 
 #endif /* RECIPE_H_ */

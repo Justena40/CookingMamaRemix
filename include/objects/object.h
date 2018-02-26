@@ -22,6 +22,8 @@ typedef enum ingr_enum {
 	BREAD_E,
 	SALAD_E,
 	STEAK_E,
+	END_E,
+	NO_CATCH_E,
 }ingr_e;
 
 typedef struct object

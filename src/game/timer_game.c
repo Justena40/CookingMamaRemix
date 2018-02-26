@@ -17,32 +17,25 @@ int	check_bad_ing(menu_t *recipe, int *ingr)
 	return (SUCCESS);
 }
 
-int	done_recipe(sfEvent *event, sfRenderWindow **window,
-		scene_m_t *i_game, menu_t *recipe)
-{
-	int res = 0;
-	int ingr = 0;
-
-	while (ingr != 5) {
-		manege_mouse_ingredient(&event->mouseButton, *window, i_game);
-		if ((res = check_bad_ing(recipe, &ingr)) == 84)
-			return (ERROR);
-		else
-			ingr++;
-	}
-	return (SUCCESS);
-}
-
 int	timer_game(sfEvent *event, sfRenderWindow **window, scene_m_t *i_game,
 		menu_t *tab_menu)
 {
+	int	check_ingr = -1;
 	int order = 0;
-	int res = 0;
+	int ingr = 0;
 	int find_recipe = 0;
 
 	find_recipe = rand() % 4;
-	if ((res = done_recipe(event, window, i_game,
-			&(tab_menu[find_recipe]))) == 0)
-		order++;
+	while (check_ingr != END_E) {
+		manege_mouse_ingredient(&event->mouseButton, *window, i_game);
+		if (check_bad_ing(&(tab_menu[find_recipe]), &ingr) == ERROR) {
+			find_recipe = rand() % 4;
+			ingr = 0;
+		} else {
+			ingr++;
+			check_ingr = tab_menu[find_recipe][];
+			}
+	}
+	order++;
 	return (SUCCESS);
 }
