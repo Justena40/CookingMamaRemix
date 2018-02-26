@@ -9,14 +9,14 @@
 #include <SFML/Audio.h>
 #include "htp.h"
 
-void	how_to_play(scene_t *i_htp, sfRenderWindow **window, sfEvent *event,
-	int *change_window)
+void	how_to_play(all_scene_t *scenes, window_t *wind)
 {
-	while (*change_window == HTP) {
-		while (sfRenderWindow_pollEvent(*window, event))
-			analyse_event_htp(event, window, change_window);
-		sfRenderWindow_clear(*window, sfBlack);
-		draw_sprite_htp(i_htp, *window);
-		sfRenderWindow_display(*window);
+	while (scenes->change_window == HTP) {
+		while (sfRenderWindow_pollEvent(wind->window, &(wind->event)))
+			analyse_event_htp(&(wind->event), &(wind->window),
+					&(scenes->change_window));
+		sfRenderWindow_clear(wind->window, sfBlack);
+		draw_sprite_htp(scenes->i_htp, wind->window);
+		sfRenderWindow_display(wind->window);
 	}
 }

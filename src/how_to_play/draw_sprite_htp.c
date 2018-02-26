@@ -13,7 +13,6 @@
 
 void	draw_sprite_htp(scene_t *i_htp, sfRenderWindow *window)
 {
-	int count = 0;
 	object_t *tmp = i_htp->obj;
 
 	while (tmp != NULL) {

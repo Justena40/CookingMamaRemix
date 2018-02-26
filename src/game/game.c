@@ -40,6 +40,5 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 		sfRenderWindow_display(*window);
 		timer_game(event, window, i_game, tab_menu);
 	}
-	//FREE TAB_MENU
 	sfClock_destroy(clock);
 }

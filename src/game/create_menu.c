@@ -18,5 +18,5 @@ void	create_tab_menu(menu_t arr_menu[4])
 	arr_menu[2] = (menu_t) {ENG_BRE, {BACON_E, CHEESE_E, TOMATO_E, SALAD_E,
 					END_E}};
 	arr_menu[3] = (menu_t) {BURGER, {BREAD_E, CHEESE_E, STEAK_E, SALAD_E,
-					 TOMATO_E, END_E}};
+					TOMATO_E, END_E}};
 }

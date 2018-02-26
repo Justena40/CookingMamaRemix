@@ -12,27 +12,27 @@
 #include "htp.h"
 #include "my.h"
 
-int	init_pictures_htp(scene_t *i_htp)
+int	init_pictures_htp(object_t **obj)
 {
 	int res = 0;
 
-	if ((res = create_node(&(i_htp->obj), SKY_HTP, 0, 0)) == false)
+	if ((res = create_node(obj, SKY_HTP, 0, 0)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), COOKER, 600, 200)) == false)
+	if ((res = create_node(obj, COOKER, 600, 200)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), PARCHMENT, 100, 80)) == false)
+	if ((res = create_node(obj, PARCHMENT, 100, 80)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), HTP_TEXT, 200, 180)) == false)
+	if ((res = create_node(obj, HTP_TEXT, 200, 180)) == false)
 		return (84);
-	if ((res = create_node(&(i_htp->obj), ARROW, 0, 0)) == false)
+	if ((res = create_node(obj, ARROW, 0, 0)) == false)
 		return (84);
 	return (0);
 }
 
-int	all_init_htp(scene_t *i_htp)
+int	all_init_htp(object_t **obj)
 {
-	i_htp->obj = NULL;
-	if (init_pictures_htp(i_htp) == 84)
+	*obj = NULL;
+	if (init_pictures_htp(obj) == 84)
 		return (84);
 	return (0);
 }

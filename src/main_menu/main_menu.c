@@ -11,16 +11,17 @@
 #include <unistd.h>
 #include "menu.h"
 #include "tools_cook.h"
+#include "scene.h"
 
-void	main_menu(scene_t *i_menu, sfRenderWindow **window, sfEvent *event,
-		int *change_window)
+void	main_menu(all_scene_t *scenes, window_t *wind)
 {
-	while (*change_window == MENU_RESTO) {
-		while (sfRenderWindow_pollEvent(*window, event)) {
-			analyse_events(event, window, change_window);
+	while (scenes->change_window == MENU_RESTO) {
+		while (sfRenderWindow_pollEvent(wind->window, &(wind->event))) {
+			analyse_events(&(wind->event), &(wind->window),
+				&(scenes->change_window));
 		}
-		sfRenderWindow_clear(*window, sfBlack);
-		draw_all_sprite(i_menu, *window);
-		sfRenderWindow_display(*window);
+		sfRenderWindow_clear(wind->window, sfBlack);
+		draw_all_sprite(scenes->i_menu, wind->window);
+		sfRenderWindow_display(wind->window);
 	}
 }

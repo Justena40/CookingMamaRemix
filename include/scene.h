@@ -8,6 +8,8 @@
 #ifndef	SCENE_H_
 #define SCENE_H_
 
+#include <SFML/Graphics.h>
+#include <SFML/Audio.h>
 #include "button.h"
 #include "object.h"
 
@@ -33,5 +35,19 @@ typedef struct menu_scene
 	object_t		*obj;
 }scene_m_t;
 
+typedef struct all_scene
+{
+	scene_t			*i_menu;
+	scene_t			*i_pause;
+	scene_t			*i_htp;
+	scene_m_t		*i_game;
+	int			change_window;
+}all_scene_t;
+
+typedef struct window_s
+{
+	sfRenderWindow		*window;
+	sfEvent			event;
+}window_t;
 
 #endif 	/*SCENE_H_*/
