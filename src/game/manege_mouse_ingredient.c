@@ -39,8 +39,7 @@ static int	move_ingr(object_t *catch_ingr, sfVector2i mouse_ingr,
 	return (catch_ingr->type);
 }
 
-ingr_e	manege_mouse_ingredient(sfMouseButtonEvent *event,
-				sfRenderWindow *window, scene_m_t *i_game)
+ingr_e	manege_mouse_ingredient(sfRenderWindow *window, scene_m_t *i_game)
 {
 	sfVector2i mouse_ingr = sfMouse_getPositionRenderWindow(window);
 	sfVector2f pos_mouse = {mouse_ingr.x, mouse_ingr.y};
@@ -58,4 +57,5 @@ ingr_e	manege_mouse_ingredient(sfMouseButtonEvent *event,
 		catch_ingredient = NULL;
 		return (NO_CATCH_E);
 	}
+	return (NO_CATCH_E);
 }

@@ -17,6 +17,5 @@ void	analyse_event_pause(sfEvent *event, sfRenderWindow **window,
 			int *change_window);
 void	pause_game(all_scene_t *scenes, window_t *wind);
 int	init_button_pause(button_t **button_p);
-void	manege_mouse_pause(sfMouseButtonEvent *event,
-			sfRenderWindow **window, int *change_window);
+void	manege_mouse_pause(sfRenderWindow **window, int *change_window);
 #endif /* PAUSE_H_ */

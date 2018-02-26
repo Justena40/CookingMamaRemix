@@ -15,7 +15,6 @@ void	how_to_play(all_scene_t *scenes, window_t *wind);
 void	analyse_event_htp(sfEvent *event, sfRenderWindow **window,
 			int *change_window);
 void	destroy_all_htp(scene_t **i_htp);
-void	manege_mouse_htp(sfMouseButtonEvent *event, sfRenderWindow **window,
-			int *change_window);
+void	manege_mouse_htp(sfRenderWindow **window, int *change_window);
 
 #endif /* HTP_H_ */

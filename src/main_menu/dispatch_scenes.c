@@ -8,13 +8,11 @@
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include "tools_cook.h"
 #include "menu.h"
 #include "htp.h"
 #include "pause.h"
 #include "play_game.h"
-
 
 int	menu(void)
 {
@@ -32,8 +30,8 @@ int	menu(void)
 		else if (scenes->change_window == HTP) {
 			how_to_play(scenes, &wind);
 		}
-//		else if (scenes->change_window = GAME)
-//			game(scenes, &wind);
+		else if (scenes->change_window = GAME)
+			game(scenes, &wind);
 	}
 	destroy_all(&scenes, &wind);
 	return (SUCCESS);

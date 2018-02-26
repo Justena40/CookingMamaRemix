@@ -10,8 +10,7 @@
 #include "tools_cook.h"
 #include "pause.h"
 
-void	manege_mouse_pause(sfMouseButtonEvent *event, sfRenderWindow **window,
-			int *change_window)
+void	manege_mouse_pause(sfRenderWindow **window, int *change_window)
 {
 	sfVector2i mouse_pause;
 

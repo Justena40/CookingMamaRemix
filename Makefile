@@ -18,7 +18,7 @@ DIR_SCN	 =	$(DIR_SRC)/init_scene
 DIR_PAU  =	$(DIR_SRC)/pause_game
 DIR_GAME =	$(DIR_SRC)/game
 
-SRC	=	$(DIR_MENU)/menu.c			\
+SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_MENU)/init_struct_menu.c		\
 		$(DIR_MENU)/destroy_menu.c		\
 		$(DIR_MENU)/draw_menu.c			\
@@ -35,6 +35,7 @@ SRC	=	$(DIR_MENU)/menu.c			\
 		$(DIR_HTP)/manege_mouse_htp.c		\
 		$(DIR_SCN)/button_init.c		\
 		$(DIR_SCN)/scene.c			\
+		$(DIR_SCN)/create_obj.c			\
 		$(DIR_PAU)/pause.c			\
 		$(DIR_PAU)/init_sprite_p.c		\
 		$(DIR_PAU)/destroy_pause.c		\
@@ -64,7 +65,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	my_cook
 
-CFLAGS	=	-g -I./include -I./include/objects
+CFLAGS	=	-g -I./include -I./include/objects -Wall -Wextra
 
 LDFLAGS	=	-lc_graph_prog
 

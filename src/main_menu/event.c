@@ -17,5 +17,5 @@ void	analyse_events(sfEvent *event, sfRenderWindow **window, int *state)
 		sfRenderWindow_close(*window);
 	}
 	if (event->type == sfEvtMouseButtonPressed)
-	manege_mouse_menu(&event->mouseButton, *window, state);
+		manege_mouse_menu(*window, state);
 }

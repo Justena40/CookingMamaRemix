@@ -10,7 +10,7 @@
 #include "tools_cook.h"
 #include "htp.h"
 
-void	manege_mouse_htp(sfMouseButtonEvent *event, sfRenderWindow **window,
+void	manege_mouse_htp(sfRenderWindow **window,
 			int *change_window)
 {
 	sfVector2i mouse_htp;

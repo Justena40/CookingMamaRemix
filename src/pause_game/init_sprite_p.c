@@ -16,17 +16,15 @@
 
 int	init_pictures_pause(object_t **obj)
 {
-	int res = 0;
-
-	if ((res = create_node(obj, NIGHT_SKY, 0, 0)) == false)
+	if (create_node(obj, NIGHT_SKY, 0, 0) == false)
 		return (ERROR);
-	if ((res = create_node(obj, GROUND, 0, 600)) == false)
+	if (create_node(obj, GROUND, 0, 600) == false)
 		return (ERROR);
-	if ((res = create_node(obj, RESTO_PA, 600, 170)) == false)
+	if (create_node(obj, RESTO_PA, 600, 170) == false)
 		return (ERROR);
-	if ((res = create_node(obj, LIGHT, 400, 470)) == false)
+	if (create_node(obj, LIGHT, 400, 470) == false)
 		return (ERROR);
-	if ((res = create_node(obj, LIGHT, 50, 470)) == false)
+	if (create_node(obj, LIGHT, 50, 470) == false)
 		return (ERROR);
 	return (SUCCESS);
 }

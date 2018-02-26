@@ -10,7 +10,7 @@
 #include "tools_cook.h"
 #include "play_game.h"
 
-void	manege_mouse_menu(sfMouseButtonEvent *event, sfRenderWindow *window,
+void	manege_mouse_menu(sfRenderWindow *window,
 		int *change_window)
 {
 	sfVector2i mouse_menu;
