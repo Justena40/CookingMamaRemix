@@ -22,8 +22,7 @@ static void	time_elapse(int *second, sfTime time, sfClock *clock,
 	*second = time.microseconds / 1000000;
 }
 
-void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
-	int *change_window)
+void	game(all_scene_t *scenes, window_t *wind)
 {
 	sfClock *clock = sfClock_create();
 	sfTime time;
@@ -31,14 +30,15 @@ void	game(scene_m_t *i_game, sfRenderWindow **window, sfEvent *event,
 	static int second = 0;
 
 	create_tab_menu(tab_menu);
-	while (*change_window == GAME) {
-		time_elapse(&second, time, clock, change_window);
-		analyse_event_game(event, window, change_window,
-				&second);
-		sfRenderWindow_clear(*window, sfBlack);
-		draw_sprite_game(i_game, *window);
-		sfRenderWindow_display(*window);
-		timer_game(event, window, i_game, tab_menu);
+	while (scenes->change_window == GAME) {
+		time_elapse(&second, time, clock, &(scenes->change_window));
+		analyse_event_game(&(wind->event), &(wind->window),
+				&(scenes->change_window), &second);
+		sfRenderWindow_clear(wind->window, sfBlack);
+		draw_sprite_game(scenes->i_game, wind->window);
+		sfRenderWindow_display(wind->window);
+		timer_game(&(wind->event), &(wind->window),
+			scenes->i_game, tab_menu);
 	}
 	sfClock_destroy(clock);
 }

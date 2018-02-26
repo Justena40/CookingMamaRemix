@@ -39,7 +39,7 @@ static int	move_ingr(object_t *catch_ingr, sfVector2i mouse_ingr,
 	return (catch_ingr->type);
 }
 
-void	manege_mouse_ingredient(sfMouseButtonEvent *event,
+int	manege_mouse_ingredient(sfMouseButtonEvent *event,
 				sfRenderWindow *window, scene_m_t *i_game)
 {
 	sfVector2i mouse_ingr = sfMouse_getPositionRenderWindow(window);
