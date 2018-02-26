@@ -48,6 +48,8 @@ typedef struct window_s
 {
 	sfRenderWindow		*window;
 	sfEvent			event;
+	sfMusic			*music;
+	sfMusic			*music_game;
 }window_t;
 
 #endif 	/*SCENE_H_*/

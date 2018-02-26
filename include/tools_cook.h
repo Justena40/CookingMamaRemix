@@ -59,8 +59,13 @@
 #define SALAD		"./resources/pictures/salad.png"
 #define STEAK		"./resources/pictures/steak.png"
 
-/*------ FONTS ------*/
+/*--------------- FONTS ---------------------------------*/
 
 #define	FONT		"./resources/fonts/Eraser.ttf"
+
+//--------------- MUSIC -------------------------------
+
+#define MENU_A		"./resources/music/menu_audio.ogg"
+#define GAME_A		"./resources/music/game_audio.ogg"
 
 #endif /*TOOLS_COOK_H_*/

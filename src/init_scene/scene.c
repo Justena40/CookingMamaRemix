@@ -40,7 +40,7 @@ int	init_scene_menu(all_scene_t *scenes)
 	if (init_scene(scenes->i_menu, scenes->i_pause,
 		scenes->i_htp, scenes->i_game) == ERROR)
 		return (ERROR);
-	scenes->change_window = MENU_RESTO;	
+	scenes->change_window = MENU_RESTO;
 	return (SUCCESS);
 }
 
@@ -54,6 +54,12 @@ int	init_window(window_t *wind, all_scene_t *scenes)
 					sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(wind->window, 60);
 	if (!wind->window)
+		return (ERROR);
+	wind->music = sfMusic_createFromFile(MENU_A);
+	if (!wind->music)
+		return (ERROR);
+	wind->music_game = sfMusic_createFromFile(GAME_A);
+	if (!wind->music_game)
 		return (ERROR);
 	return (SUCCESS);
 }
