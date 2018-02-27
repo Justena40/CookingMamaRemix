@@ -65,7 +65,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	my_cook
 
-CFLAGS	=	-g -I./include -I./include/objects -Wall -Wextra
+CFLAGS	=	-g -I./include -I./include/objects
 
 LDFLAGS	=	-lc_graph_prog
 

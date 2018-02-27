@@ -29,8 +29,10 @@ void	game(all_scene_t *scenes, window_t *wind)
 	menu_t tab_menu[4];
 	static int second = 0;
 
-//	sfMusic_play(wind->music_game);
 	create_tab_menu(tab_menu);
+	sfMusic_stop(wind->music);
+	sfMusic_play(wind->music_game);
+	sfMusic_setLoop(wind->music_game, sfTrue);
 	while (scenes->change_window == GAME) {
 		time_elapse(&second, time, clock, &(scenes->change_window));
 		analyse_event_game(&(wind->event), &(wind->window),
@@ -41,5 +43,4 @@ void	game(all_scene_t *scenes, window_t *wind)
 		timer_game(wind, scenes, tab_menu, &second);
 	}
 	sfClock_destroy(clock);
-//	sfMusic_destroy(wind->music_game);
 }

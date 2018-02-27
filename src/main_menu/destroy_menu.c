@@ -32,5 +32,7 @@ void	destroy_all(all_scene_t **scenes, window_t *wind)
 	destroy_all_pause(&((*scenes)->i_pause));
 	destroy_all_menu(&((*scenes)->i_menu));
 	destroy_all_game(&((*scenes)->i_game));
+	sfMusic_destroy(wind->music);
+	sfMusic_destroy(wind->music_game);
 	sfRenderWindow_destroy(wind->window);
 }
