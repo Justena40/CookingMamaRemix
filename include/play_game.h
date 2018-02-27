@@ -32,5 +32,7 @@ void	fill_tab_menu(char **tab_menu);
 ingr_e	manege_mouse_ingredient(sfRenderWindow *window, scene_m_t *i_game);
 int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 	int *second);
+void	time_elapse(int *second, sfTime time, sfClock *clock,
+		    int *change_window);
 
 #endif /* PLAY_GAME_H_ */

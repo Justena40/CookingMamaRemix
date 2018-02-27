@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include "play_game.h"
 
-static void	time_elapse(int *second, sfTime time, sfClock *clock,
+void	time_elapse(int *second, sfTime time, sfClock *clock,
 	int *change_window)
 {
 	if (*second >= END_TIMER) {
@@ -34,12 +34,6 @@ void	game(all_scene_t *scenes, window_t *wind)
 	sfMusic_play(wind->music_game);
 	sfMusic_setLoop(wind->music_game, sfTrue);
 	while (scenes->change_window == GAME) {
-		time_elapse(&second, time, clock, &(scenes->change_window));
-		analyse_event_game(&(wind->event), &(wind->window),
-				&(scenes->change_window), &second);
-		sfRenderWindow_clear(wind->window, sfBlack);
-		draw_sprite_game(scenes->i_game, wind->window);
-		sfRenderWindow_display(wind->window);
 		timer_game(wind, scenes, tab_menu, &second);
 	}
 	sfClock_destroy(clock);

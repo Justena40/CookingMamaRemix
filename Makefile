@@ -12,7 +12,7 @@ RM	=	rm -f
 DIR_SRC	 =	src
 DIR_OBJ	 =	$(DIR_SRC)/objects
 DIR_MY	 =	$(DIR_SRC)/my
-DIR_MENU =	$(DIR_SRC)/main_menu
+DIR_MENU =	$(DIR_SRC)/menu
 DIR_HTP	 =	$(DIR_SRC)/how_to_play
 DIR_SCN	 =	$(DIR_SRC)/init_scene
 DIR_PAU  =	$(DIR_SRC)/pause_game
@@ -24,7 +24,7 @@ SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_MENU)/draw_menu.c			\
 		$(DIR_MENU)/event.c			\
 		$(DIR_MENU)/manege_mouse_menu.c		\
-		$(DIR_MENU)/main_menu.c			\
+		$(DIR_MENU)/menu.c			\
 		$(DIR_MENU)/button_menu.c		\
 		$(DIR_SRC)/main.c			\
 		$(DIR_HTP)/how_to_play.c		\

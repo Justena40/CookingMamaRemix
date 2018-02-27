@@ -16,6 +16,7 @@ void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window)
 	object_t *tmp = i_game->obj;
 	object_t *tmp2 = i_game->ingr;
 
+	sfRenderWindow_clear(window, sfBlack);
 	while (tmp != NULL) {
 		sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
 		tmp = tmp->next;
@@ -30,4 +31,5 @@ void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window)
 		sfRenderWindow_drawSprite(window, tmp2->sprite, NULL);
 		tmp2 = tmp2->next;
 	}
+	sfRenderWindow_display(window);
 }
