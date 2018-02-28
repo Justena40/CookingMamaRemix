@@ -19,7 +19,6 @@ void	time_elapse(int *second, sfTime time, sfClock *clock,
 		*second = 0;
 		*change_window = MENU_RESTO;
 	}
-	printf("salut\n");
 	time = sfClock_getElapsedTime(clock);
 	*second = time.microseconds / 1000000;
 }

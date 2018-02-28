@@ -10,7 +10,6 @@ CC	=	gcc
 RM	=	rm -f
 
 DIR_SRC	 =	src
-DIR_OBJ	 =	$(DIR_SRC)/objects
 DIR_MY	 =	$(DIR_SRC)/my
 DIR_MENU =	$(DIR_SRC)/menu
 DIR_HTP	 =	$(DIR_SRC)/how_to_play
@@ -36,6 +35,7 @@ SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_SCN)/button_init.c		\
 		$(DIR_SCN)/scene.c			\
 		$(DIR_SCN)/create_obj.c			\
+		$(DIR_SCN)/text.c			\
 		$(DIR_PAU)/pause.c			\
 		$(DIR_PAU)/init_sprite_p.c		\
 		$(DIR_PAU)/destroy_pause.c		\
@@ -47,10 +47,6 @@ SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_MY)/my_strlen.c			\
 		$(DIR_MY)/my_strcmp.c			\
 		$(DIR_MY)/my_strdup.c			\
-		$(DIR_OBJ)/button.c			\
-		$(DIR_OBJ)/music.c			\
-		$(DIR_OBJ)/object.c			\
-		$(DIR_OBJ)/text.c			\
 		$(DIR_GAME)/game.c			\
 		$(DIR_GAME)/init_sprite_catch.c		\
 		$(DIR_GAME)/init_sprite_uncatch.c	\

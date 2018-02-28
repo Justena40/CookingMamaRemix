@@ -15,7 +15,6 @@ void	pause_game(all_scene_t *scenes, window_t *wind, int *pause,
 	int *second)
 {
 	while (*pause == PAUSE) {
-		printf("pause second = %d\n", *second);
 		while (sfRenderWindow_pollEvent(wind->window, &(wind->event)))
 			analyse_event_pause(wind, &(scenes->change_window),
 					    pause, second);
