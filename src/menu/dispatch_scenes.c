@@ -22,14 +22,10 @@ int	menu(void)
 	if (init_window(&wind, scenes) == ERROR)
 		return (ERROR);
 	while (sfRenderWindow_isOpen(wind.window)) {
-//		if (scenes->change_window == PAUSE)
-//			pause_game(scenes, &wind);
-		if (scenes->change_window == MENU_RESTO) {
+		if (scenes->change_window == MENU_RESTO)
 			main_menu(scenes, &wind);
-		}
-		else if (scenes->change_window == HTP) {
+		else if (scenes->change_window == HTP)
 			how_to_play(scenes, &wind);
-		}
 		else if (scenes->change_window == GAME)
 			game(scenes, &wind);
 	}

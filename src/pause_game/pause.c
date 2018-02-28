@@ -11,12 +11,14 @@
 #include <unistd.h>
 #include "pause.h"
 
-void	pause_game(all_scene_t *scenes, window_t *wind)
+void	pause_game(all_scene_t *scenes, window_t *wind, int *pause,
+	int *second)
 {
-	while (scenes->change_window == PAUSE) {
+	while (*pause == PAUSE) {
+		printf("pause second = %d\n", *second);
 		while (sfRenderWindow_pollEvent(wind->window, &(wind->event)))
-			analyse_event_pause(&(wind->event), &(wind->window),
-					&(scenes->change_window));
+			analyse_event_pause(wind, &(scenes->change_window),
+					    pause, second);
 		sfRenderWindow_clear(wind->window, sfBlack);
 		draw_sprite_pause(scenes->i_pause, wind->window);
 		sfRenderWindow_display(wind->window);

@@ -35,9 +35,9 @@ int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 
 	recipe = rand() % 4;
 	while (tab_menu[recipe].ingr[ingr] != END_E && *second < END_TIMER) {
+		printf("second = %d\n", *second);
 		time_elapse(second, time, clock, &(scenes->change_window));
-		analyse_event_game(&(wind->event), &(wind->window),
-				&(scenes->change_window), second);
+		analyse_event_game(wind, scenes, second);
 		ingr_catch = manege_mouse_ingredient(wind->window,
 					     scenes->i_game);
 		check_ingr(&recipe, &ingr, tab_menu, ingr_catch);
