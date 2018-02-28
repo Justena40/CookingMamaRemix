@@ -18,6 +18,7 @@ int	init_scene(scene_t *i_menu, scene_t *i_pause, scene_t *i_htp,
 		scene_m_t *i_game);
 int	init_game_obj_uncatch(object_t **obj);
 int	init_game_obj_catch(object_t **ingr);
+int	init_game_obj_menu_cart(object_t **obj);
 void	game(all_scene_t *scenes, window_t *wind);
 void	analyse_event_game(window_t *wind, all_scene_t *scene, int *second);
 void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window);
