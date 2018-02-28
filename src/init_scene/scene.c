@@ -22,7 +22,8 @@ int	init_scene(scene_t *i_menu, scene_t *i_pause, scene_t *i_htp,
 	init_button_menu(&(i_menu->button)) == 84 ||
 	init_button_pause(&(i_pause->button)) == 84 ||
 	init_game_obj_catch(&(i_game->ingr)) == 84 ||
-	init_game_obj_uncatch(&(i_game->obj)) == 84)
+	init_game_obj_uncatch(&(i_game->obj)) == 84 ||
+	init_game_obj_menu_cart(&(i_game->obj)) == 84)
 		return (ERROR);
 	return (SUCCESS);
 }

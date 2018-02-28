@@ -60,6 +60,7 @@ SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_GAME)/create_menu.c		\
 		$(DIR_GAME)/manege_mouse_ingredient.c	\
 		$(DIR_GAME)/timer_game.c		\
+		$(DIR_GAME)/init_sprite_menu_cart.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

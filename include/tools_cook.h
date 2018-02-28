@@ -14,8 +14,6 @@
 #define ERROR		84
 #define MALLOC_ERROR	NULL
 
-#define	END_TIMER		25
-
 /*********** RESOURCES ************/
 
 /*------ PICTURES ------*/
@@ -60,6 +58,10 @@
 #define BREAD		"./resources/pictures/bread.png"
 #define SALAD		"./resources/pictures/salad.png"
 #define STEAK		"./resources/pictures/steak.png"
+#define B_MENU		"./resources/pictures/burger_menu.png"
+#define E_MENU		"./resources/pictures/eng_bre_menu.png"
+#define L_MENU		"./resources.pictures/lasagna_menu.png"
+#define P_MENU		"./resources/pictures/pizza_menu.png"
 
 /*--------------- FONTS ---------------------------------*/
 
