@@ -14,13 +14,13 @@
 
 static int	init_pictures_menu_cart(object_t **obj)
 {
-	if (create_node(obj, B_MENU, 30, 0) == false)
-		return (ERROR);
-	if (create_node(obj, E_MENU, 30, 0) == false)
+	if (create_node(obj, P_MENU, 30, 0) == false)
 		return (ERROR);
 	if (create_node(obj, L_MENU, 30, 0) == false)
 		return (ERROR);
-	if (create_node(obj, P_MENU, 30, 0) == false)
+	if (create_node(obj, E_MENU, 30, 0) == false)
+		return (ERROR);
+	if (create_node(obj, B_MENU, 30, 0) == false)
 		return (ERROR);
 	return (SUCCESS);
 }
