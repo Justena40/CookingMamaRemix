@@ -23,7 +23,7 @@ int	init_scene(scene_t *i_menu, scene_t *i_pause, scene_t *i_htp,
 	init_button_pause(&(i_pause->button)) == 84 ||
 	init_game_obj_catch(&(i_game->ingr)) == 84 ||
 	init_game_obj_uncatch(&(i_game->obj)) == 84 ||
-	init_game_obj_menu_cart(&(i_game->obj)) == 84)
+	init_game_obj_menu_cart(&(i_game->menu_cart)) == 84)
 		return (ERROR);
 	return (SUCCESS);
 }
@@ -45,6 +45,17 @@ int	init_scene_menu(all_scene_t *scenes)
 	return (SUCCESS);
 }
 
+void	init_score(window_t *wind)
+{
+	wind->score_font = sfFont_createFromFile(SCORE_F);
+	wind->score_order = sfText_create();
+	sfText_setFont(wind->score_order, wind->score_font);
+	sfText_setCharacterSize(wind->score_order, 50);
+	(wind->tab_score)[0] = '0';
+	(wind->tab_score)[1] = '0';
+	(wind->tab_score)[2] = '\0';
+}
+
 int	init_window(window_t *wind, all_scene_t *scenes)
 {
 	sfVideoMode mode = {1080, 720, 32};
@@ -62,5 +73,6 @@ int	init_window(window_t *wind, all_scene_t *scenes)
 	wind->music_game = sfMusic_createFromFile(GAME_A);
 	if (!wind->music_game)
 		return (ERROR);
+	init_score(wind);
 	return (SUCCESS);
 }

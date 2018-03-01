@@ -41,6 +41,7 @@ int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 					     scenes->i_game);
 		check_ingr(&recipe, &ingr, tab_menu, ingr_catch);
 		draw_sprite_game(scenes->i_game, wind->window);
+		sfRenderWindow_drawText(wind->window, wind->score_order, NULL);
 	}
 	order++;
 	return (SUCCESS);

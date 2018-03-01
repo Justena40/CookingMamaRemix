@@ -27,7 +27,6 @@ static int	init_pictures_menu_cart(object_t **obj)
 
 int	init_game_obj_menu_cart(object_t **obj)
 {
-	*obj = NULL;
 	if (init_pictures_menu_cart(obj) == ERROR)
 		return (ERROR);
 	return (SUCCESS);

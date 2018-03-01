@@ -49,7 +49,7 @@
 #define SAUCE_P		"./resources/pictures/saucepan.png"
 #define TAB_ING		"./resources/pictures/post_whool_ingredient.png"
 
-//-------------- INGREDIENTS ----------------------------
+//  _________ INGREDIENTS
 
 #define CHEESE		"./resources/pictures/cheese.png"
 #define DOUGH		"./resources/pictures/dough.png"
@@ -60,6 +60,9 @@
 #define BREAD		"./resources/pictures/bread.png"
 #define SALAD		"./resources/pictures/salad.png"
 #define STEAK		"./resources/pictures/steak.png"
+
+//  _________ MENU CARD
+
 #define B_MENU		"./resources/pictures/burger_menu.png"
 #define E_MENU		"./resources/pictures/eng_bre_menu.png"
 #define L_MENU		"./resources/pictures/lasagna_menu.png"
@@ -68,6 +71,7 @@
 /*--------------- FONTS ---------------------------------*/
 
 #define	FONT		"./resources/fonts/Eraser.ttf"
+#define SCORE_F		"./resources/fonts/Liar_Script.ttf"
 
 //--------------- MUSIC -------------------------------
 

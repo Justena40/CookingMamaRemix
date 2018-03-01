@@ -33,6 +33,7 @@ typedef struct menu_scene
 	button_t		*button;
 	object_t		*ingr;
 	object_t		*obj;
+	object_t		*menu_cart;
 }scene_m_t;
 
 typedef struct all_scene
@@ -50,6 +51,9 @@ typedef struct window_s
 	sfEvent			event;
 	sfMusic			*music;
 	sfMusic			*music_game;
+	sfText			*score_order;
+	sfFont			*score_font;
+	char			tab_score[3];
 }window_t;
 
 #endif 	/*SCENE_H_*/
