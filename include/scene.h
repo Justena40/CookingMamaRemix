@@ -51,9 +51,10 @@ typedef struct window_s
 	sfEvent			event;
 	sfMusic			*music;
 	sfMusic			*music_game;
-	sfText			*score_order;
 	sfFont			*score_font;
+	sfText			*score_order;
 	char			tab_score[3];
+	sfVector2f		pos_score;
 }window_t;
 
 #endif 	/*SCENE_H_*/

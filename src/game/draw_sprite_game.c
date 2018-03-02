@@ -11,14 +11,15 @@
 #include "scene.h"
 #include "play_game.h"
 
-void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window)
+void	draw_sprite_game(scene_m_t *i_game, window_t *wind)
 {
 	object_t *tmp = i_game->obj;
 	object_t *tmp2 = i_game->ingr;
 
-	sfRenderWindow_clear(window, sfBlack);
+	sfRenderWindow_clear(wind->window, sfBlack);
+	sfText_setPosition(wind->score_order, wind->pos_score);
 	while (tmp != NULL) {
-		sfRenderWindow_drawSprite(window, tmp->sprite, NULL);
+		sfRenderWindow_drawSprite(wind->window, tmp->sprite, NULL);
 		tmp = tmp->next;
 	}
 	while (tmp2 != NULL) {
@@ -28,8 +29,9 @@ void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window)
 			tmp2->pos.x = tmp2->save_pos.x;
 			sfSprite_setPosition(tmp2->sprite, tmp2->pos);
 		}
-		sfRenderWindow_drawSprite(window, tmp2->sprite, NULL);
+		sfRenderWindow_drawSprite(wind->window, tmp2->sprite, NULL);
 		tmp2 = tmp2->next;
 	}
-	sfRenderWindow_display(window);
+	sfRenderWindow_drawText(wind->window, wind->score_order, NULL);
+	sfRenderWindow_display(wind->window);
 }

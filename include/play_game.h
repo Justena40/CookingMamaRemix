@@ -21,7 +21,7 @@ int	init_game_obj_catch(object_t **ingr);
 int	init_game_obj_menu_cart(object_t **obj);
 void	game(all_scene_t *scenes, window_t *wind);
 void	analyse_event_game(window_t *wind, all_scene_t *scene, int *second);
-void	draw_sprite_game(scene_m_t *i_game, sfRenderWindow *window);
+void	draw_sprite_game(scene_m_t *i_game, window_t *wind);
 void	destroy_all_game(scene_m_t **i_game);
 void	manege_mouse_menu(sfRenderWindow *window,
 			int *change_window);

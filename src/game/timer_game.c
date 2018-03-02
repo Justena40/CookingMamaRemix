@@ -23,6 +23,14 @@ static void	check_ingr(int *recipe, int *ingr, menu_t *tab_menu, ingr_e ingr_cat
 		*ingr++;
 }
 
+void	change_score(window_t *wind, int order)
+{
+	int score = order;
+
+	wind->tab_score[1] = score % 10 + 48;
+	wind->tab_score[0] = score / 10 % 10 + 48; 
+}
+
 int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 	int *second)
 {
@@ -40,9 +48,11 @@ int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 		ingr_catch = manege_mouse_ingredient(wind->window,
 					     scenes->i_game);
 		check_ingr(&recipe, &ingr, tab_menu, ingr_catch);
-		draw_sprite_game(scenes->i_game, wind->window);
-		sfRenderWindow_drawText(wind->window, wind->score_order, NULL);
+		sfText_setString(wind->score_order, wind->tab_score);
+		draw_sprite_game(scenes->i_game, wind);
 	}
 	order++;
+	change_score(wind, order);
 	return (SUCCESS);
 }
+

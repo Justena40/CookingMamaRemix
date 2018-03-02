@@ -21,6 +21,7 @@ int	menu(void)
 
 	if (init_window(&wind, scenes) == ERROR)
 		return (ERROR);
+	sfText_setString(wind.score_order, wind.tab_score);
 	while (sfRenderWindow_isOpen(wind.window)) {
 		if (scenes->change_window == MENU_RESTO)
 			main_menu(scenes, &wind);

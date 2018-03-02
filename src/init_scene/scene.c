@@ -51,9 +51,12 @@ void	init_score(window_t *wind)
 	wind->score_order = sfText_create();
 	sfText_setFont(wind->score_order, wind->score_font);
 	sfText_setCharacterSize(wind->score_order, 50);
+	sfText_setColor(wind->score_order, sfBlack);
 	(wind->tab_score)[0] = '0';
 	(wind->tab_score)[1] = '0';
 	(wind->tab_score)[2] = '\0';
+	wind->pos_score.x = 260;
+	wind->pos_score.y = 390;
 }
 
 int	init_window(window_t *wind, all_scene_t *scenes)
@@ -62,6 +65,7 @@ int	init_window(window_t *wind, all_scene_t *scenes)
 
 	if (init_scene_menu(scenes) == ERROR)
 		return (ERROR);
+	init_score(wind);
 	wind->window = sfRenderWindow_create(mode, "MY_COOK",
 					sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(wind->window, 60);
@@ -73,6 +77,5 @@ int	init_window(window_t *wind, all_scene_t *scenes)
 	wind->music_game = sfMusic_createFromFile(GAME_A);
 	if (!wind->music_game)
 		return (ERROR);
-	init_score(wind);
 	return (SUCCESS);
 }
