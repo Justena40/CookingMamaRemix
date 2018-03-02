@@ -48,6 +48,7 @@
 #define CASH_REG	"./resources/pictures/caisse.png"
 #define SAUCE_P		"./resources/pictures/saucepan.png"
 #define TAB_ING		"./resources/pictures/post_whool_ingredient.png"
+#define TIMER		"./resources/pictures/timer.png"
 
 //  _________ INGREDIENTS
 

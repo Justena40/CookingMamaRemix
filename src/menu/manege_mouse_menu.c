@@ -12,7 +12,7 @@
 
 int	play(sfVector2i mouse_menu)
 {
-	if (mouse_menu.x >= 690 && mouse_menu.x <= 690 + 100
+	if (mouse_menu.x >= 655 && mouse_menu.x <= 690 + 100
 	&& mouse_menu.y >= 540 && mouse_menu.y <= 540 + 30) {
 		return (1);
 	}
@@ -21,7 +21,7 @@ int	play(sfVector2i mouse_menu)
 
 int	htp(sfVector2i mouse_menu)
 {
-	if (mouse_menu.x >= 655 && mouse_menu.x <= 655 + 100
+	if (mouse_menu.x >= 655 && mouse_menu.x <= 655 + 160
 	&& mouse_menu.y >= 590 && mouse_menu.y <= 590 + 30) {
 		return (1);
 	}
@@ -30,7 +30,7 @@ int	htp(sfVector2i mouse_menu)
 
 int	quit(sfVector2i mouse_menu)
 {
-	if (mouse_menu.x >= 690 && mouse_menu.x <= 690 + 100
+	if (mouse_menu.x >= 655 && mouse_menu.x <= 690 + 100
 	&& mouse_menu.y >= 635 && mouse_menu.y <= 635 + 100) {
 		return (1);
 	}

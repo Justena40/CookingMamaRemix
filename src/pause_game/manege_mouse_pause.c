@@ -11,7 +11,7 @@
 #include "pause.h"
 
 void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
-			   int *pause, int *second)
+			int *pause)
 {
 	sfVector2i mouse_pause = sfMouse_getPositionRenderWindow(*window);
 
@@ -19,7 +19,6 @@ void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
 		if (mouse_pause.x >= 170 && mouse_pause.x <= 170 + 100
 		&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
 			*pause = -1;
-			*second = END_TIMER;
 			*change_window = MENU_RESTO;
 		}
 		else if (mouse_pause.x >= 290 && mouse_pause.x <= 290 + 100
@@ -28,7 +27,6 @@ void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
 		}
 		else if (mouse_pause.x >= 410 && mouse_pause.x <= 410 + 100
 			&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
-			*second = END_TIMER;
 			*change_window = -1;
 			*pause = -1;
 			sfRenderWindow_close(*window);

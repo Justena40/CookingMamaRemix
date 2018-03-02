@@ -26,6 +26,8 @@ static int	init_pictures_game(object_t **obj)
 		return (ERROR);
 	if (create_node(obj, SAUCE_P, 650, 450) == false)
 		return (ERROR);
+	if (create_node(obj, TIMER, 390, 0) == false)
+		return (ERROR);
 	return (SUCCESS);
 }
 

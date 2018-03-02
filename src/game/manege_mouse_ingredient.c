@@ -30,13 +30,16 @@ object_t	*position_mouse_ingredient(sfVector2i *mouse_ingr,
 	return (NULL);
 }
 
-static int	move_ingr(object_t *catch_ingr, sfVector2i mouse_ingr,
+static ingr_e	move_ingr(object_t *catch_ingr, sfVector2i mouse_ingr,
 	sfVector2f pos_mouse)
 {
 	catch_ingr->pos.x = mouse_ingr.x;
 	catch_ingr->pos.y = mouse_ingr.y;
 	sfSprite_setPosition(catch_ingr->sprite, pos_mouse);
-	return (catch_ingr->type);
+	if (catch_ingr->pos.x >= 650 && catch_ingr->pos.x <= 650 + 450 &&
+	catch_ingr->pos.y >= 450 && catch_ingr->pos.y <= 450 + 157)
+		return (catch_ingr->type);
+	return (NO_CATCH_E);
 }
 
 ingr_e	manege_mouse_ingredient(sfRenderWindow *window, scene_m_t *i_game)

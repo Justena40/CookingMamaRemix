@@ -12,32 +12,30 @@
 #include "play_game.h"
 #include "recipe.h"
 
-static void	check_ingr(int *recipe, int *ingr, menu_t *tab_menu, ingr_e ingr_catch)
+static void	check_ingr(int *recipe, int *ingre, menu_t *tab_menu,
+			ingr_e ingr_catch)
 {
-	if (tab_menu[*recipe].ingr[*ingr] != ingr_catch &&
-	    tab_menu[*recipe].ingr[*ingr] == NO_CATCH_E) {
-		*recipe = rand() % 4;
-		*ingr = 0;
+	static int	time_pass = 0;
+	if (tab_menu[*recipe].ingr[*ingre] == ingr_catch) {
+		(*ingre)++;
+		time_pass = 0;
 	}
-	else if (tab_menu[*recipe].ingr[*ingr] == ingr_catch)
-		*ingr++;
-}
-
-void	change_score(window_t *wind, int order)
-{
-	int score = order;
-
-	wind->tab_score[1] = score % 10 + 48;
-	wind->tab_score[0] = score / 10 % 10 + 48; 
+	else if (tab_menu[*recipe].ingr[*ingre] != ingr_catch &&
+		ingr_catch != NO_CATCH_E) {
+		if (time_pass >= 20) {
+			(*recipe) = rand() % 4;
+			(*ingre) = 0;
+			time_pass = 0;
+		} else
+			time_pass++;
+	}
 }
 
 int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
-	int *second)
+		int *second, sfClock *clock)
 {
 	ingr_e	ingr_catch = NO_CATCH_E;
-	sfClock *clock = sfClock_create();
 	sfTime time;
-	int order = 0;
 	int ingr = 0;
 	int recipe = 0;
 
@@ -46,13 +44,12 @@ int	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 		time_elapse(second, time, clock, &(scenes->change_window));
 		analyse_event_game(wind, scenes, second);
 		ingr_catch = manege_mouse_ingredient(wind->window,
-					     scenes->i_game);
+						scenes->i_game);
 		check_ingr(&recipe, &ingr, tab_menu, ingr_catch);
 		sfText_setString(wind->score_order, wind->tab_score);
-		draw_sprite_game(scenes->i_game, wind);
+		sfText_setString(wind->time_text, wind->tab_time);
+		draw_sprite_game(scenes->i_game, wind, recipe);
+		change_second(wind, *second);
 	}
-	order++;
-	change_score(wind, order);
 	return (SUCCESS);
 }
-

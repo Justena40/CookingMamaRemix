@@ -26,7 +26,7 @@ static bool	init_obj(object_t *new_object, char const *pathname,
 }
 
 bool	create_node(object_t **obj, char const *pathname,
-		    int pos_x, int pos_y)
+		int pos_x, int pos_y)
 {
 	object_t	*tmp = *obj;
 	object_t	*new_object = malloc(sizeof(object_t));
