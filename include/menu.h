@@ -21,5 +21,8 @@ void	main_menu(all_scene_t *scenes, window_t *wind);
 int	init_button_menu(button_t **but);
 void	destroy_all(all_scene_t **scenes, window_t *wind);
 int	init_window(window_t *wind, all_scene_t *scenes);
+int	play(sfVector2i mouse_menu);
+int	htp(sfVector2i mouse_menu);
+int	quit(sfVector2i mouse_menu);
 
 #endif /* MENU_H_ */
