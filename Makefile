@@ -25,6 +25,7 @@ SRC	=	$(DIR_MENU)/dispatch_scenes.c		\
 		$(DIR_MENU)/manege_mouse_menu.c		\
 		$(DIR_MENU)/menu.c			\
 		$(DIR_MENU)/button_menu.c		\
+		$(DIR_MENU)/pos_but.c			\
 		$(DIR_SRC)/main.c			\
 		$(DIR_HTP)/how_to_play.c		\
 		$(DIR_HTP)/init_sprite_htp.c		\

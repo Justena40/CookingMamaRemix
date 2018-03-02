@@ -12,18 +12,7 @@
 #include "tools_cook.h"
 #include "play_game.h"
 
-void	time_elapse(int *second, sfTime time, sfClock *clock,
-	int *change_window)
-{
-	if (*second >= END_TIMER) {
-		*second = 0;
-		*change_window = MENU_RESTO;
-	}
-	time = sfClock_getElapsedTime(clock);
-	*second = time.microseconds / 1000000;
-}
-
-void	change_score(window_t *wind, int order)
+static void	change_score(window_t *wind, int order)
 {
 	int score = order;
 
@@ -39,23 +28,32 @@ void	change_second(window_t *wind, int second)
 	wind->tab_time[0] = score / 10 % 10 + 48;
 }
 
-void	game(all_scene_t *scenes, window_t *wind)
+static void	music_init(window_t *wind)
 {
-	static int order = 0;
-	sfClock *clock = sfClock_create();
-	menu_t tab_menu[4];
-	int second = 0;
-
-	create_tab_menu(tab_menu);
 	sfMusic_stop(wind->music);
 	sfMusic_play(wind->music_game);
 	sfMusic_setLoop(wind->music_game, sfTrue);
-	second = 0;
-	while (scenes->change_window == GAME && second < END_TIMER) {
+}
+
+int	game(all_scene_t *scenes, window_t *wind)
+{
+	static int order = 0;
+	clocks_t	*clock = malloc(sizeof(clock_t));
+	menu_t tab_menu[4];
+
+	if (clock == NULL)
+		return (ERROR);
+	clock->clock = sfClock_create();
+	create_tab_menu(tab_menu);
+	music_init(wind);
+	clock->second = 0;
+	while (scenes->change_window == GAME &&
+	clock->second < END_TIMER) {
 		change_score(wind, order);
-		timer_game(wind, scenes, tab_menu, &second, clock);
+		timer_game(wind, scenes, tab_menu, clock);
 		order++;
 	}
 	order = 0;
 	scenes->change_window = MENU_RESTO;
+	return (SUCCESS);
 }

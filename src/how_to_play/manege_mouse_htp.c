@@ -18,7 +18,7 @@ void	manege_mouse_htp(sfRenderWindow **window,
 	mouse_htp = sfMouse_getPositionRenderWindow(*window);
 	if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue) {
 		if (mouse_htp.x >= 0 && mouse_htp.x <= 50
-		&& mouse_htp.y >= 0 && mouse_htp.y <= 30) {
+		&& mouse_htp.y >= 0 && mouse_htp.y <= 40) {
 			*change_window = MENU_RESTO;
 		}
 	}
