@@ -45,6 +45,21 @@ int	init_scene_menu(all_scene_t *scenes)
 	return (SUCCESS);
 }
 
+static int	init_music(window_t *wind)
+{
+	if (!wind->window)
+		return (ERROR);
+	wind->music = sfMusic_createFromFile(MENU_A);
+	if (!wind->music)
+		return (ERROR);
+	wind->bad_m = sfMusic_createFromFile(BAD_M_A);
+	if (!wind->bad_m)
+		return (ERROR);
+	wind->music_game = sfMusic_createFromFile(GAME_A);
+	if (!wind->music_game)
+		return (ERROR);
+}
+
 int	init_window(window_t *wind, all_scene_t *scenes)
 {
 	sfVideoMode mode = {1080, 720, 32};
@@ -56,13 +71,7 @@ int	init_window(window_t *wind, all_scene_t *scenes)
 	wind->window = sfRenderWindow_create(mode, "MY_COOK",
 					sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(wind->window, 60);
-	if (!wind->window)
-		return (ERROR);
-	wind->music = sfMusic_createFromFile(MENU_A);
-	if (!wind->music)
-		return (ERROR);
-	wind->music_game = sfMusic_createFromFile(GAME_A);
-	if (!wind->music_game)
+	if (init_music(wind) == ERROR)
 		return (ERROR);
 	return (SUCCESS);
 }

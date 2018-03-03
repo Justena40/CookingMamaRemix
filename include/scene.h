@@ -50,6 +50,7 @@ typedef struct window_s
 	sfRenderWindow		*window;
 	sfEvent			event;
 	sfMusic			*music;
+	sfMusic			*bad_m;
 	sfMusic			*music_game;
 	sfText			*score_order;
 	sfFont			*score_font;

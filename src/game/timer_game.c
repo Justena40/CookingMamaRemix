@@ -12,7 +12,7 @@
 #include "play_game.h"
 #include "recipe.h"
 
-static void	check_ingr(int *recipe, int *ingre, menu_t *tab_menu,
+static int	check_ingr(int *recipe, int *ingre, menu_t *tab_menu,
 			ingr_e ingr_catch)
 {
 	static int	time_pass = 0;
@@ -22,13 +22,15 @@ static void	check_ingr(int *recipe, int *ingre, menu_t *tab_menu,
 	}
 	else if (tab_menu[*recipe].ingr[*ingre] != ingr_catch &&
 		ingr_catch != NO_CATCH_E) {
-		if (time_pass >= 20) {
+		if (time_pass >= 12) {
 			(*recipe) = rand() % 4;
 			(*ingre) = 0;
 			time_pass = 0;
+			return (ERROR);
 		} else
 			time_pass++;
 	}
+	return (SUCCESS);
 }
 
 static void	time_elapse(int *second, sfTime time, sfClock *clock,
@@ -57,7 +59,9 @@ void	timer_game(window_t *wind, all_scene_t *scenes,	menu_t *tab_menu,
 		analyse_event_game(wind, scenes, &(clock->second));
 		ingr_catch = manege_mouse_ingredient(wind->window,
 						scenes->i_game);
-		check_ingr(&recipe, &ingr, tab_menu, ingr_catch);
+		if (check_ingr(&recipe, &ingr, tab_menu,
+			ingr_catch) == ERROR)
+			sfMusic_play(wind->bad_m);
 		sfText_setString(wind->score_order, wind->tab_score);
 		sfText_setString(wind->time_text, wind->tab_time);
 		draw_sprite_game(scenes->i_game, wind, recipe);
