@@ -22,14 +22,14 @@ static void	close_event(sfEvent *event, sfRenderWindow **window,
 	}
 }
 
-static void	pause_event(window_t *wind, all_scene_t *scene)
+static void	pause_event(window_t *wind, all_scene_t *scene, int *second)
 {
 	int	pause = 0;
 
 	if (wind->event.type == sfEvtKeyPressed) {
 		if (sfKeyboard_isKeyPressed(sfKeyEscape) == sfTrue) {
 			pause = PAUSE;
-			pause_game(scene, wind, &pause);
+			pause_game(scene, wind, &pause, second);
 		}
 	}
 }
@@ -37,7 +37,7 @@ static void	pause_event(window_t *wind, all_scene_t *scene)
 void	analyse_event_game(window_t *wind, all_scene_t *scene, int *second)
 {
 	while (sfRenderWindow_pollEvent(wind->window, &(wind->event))) {
-		pause_event(wind, scene);
+		pause_event(wind, scene, second);
 		close_event(&(wind->event), &(wind->window),
 			&(scene->change_window), second);
 		if (!sfRenderWindow_isOpen(wind->window))

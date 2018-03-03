@@ -14,7 +14,7 @@
 #define ERROR		84
 #define MALLOC_ERROR	NULL
 
-#define END_TIMER	25
+#define END_TIMER	60
 
 /*********** RESOURCES ************/
 

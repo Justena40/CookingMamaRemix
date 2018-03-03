@@ -14,10 +14,11 @@ int	all_init_pause(object_t **obj);
 void	destroy_all_pause(scene_t **i_pause);
 void	draw_sprite_pause(scene_t *i_pause, sfRenderWindow *window);
 void	analyse_event_pause(window_t *wind, int *change_window,
-			int *pause);
-void	pause_game(all_scene_t *scenes, window_t *wind, int *pause);
+			int *pause, int *second);
+void	pause_game(all_scene_t *scenes, window_t *wind, int *pause,
+	int *second);
 int	init_button_pause(button_t **button_p);
 void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
-			int *pause);
+			int *pause, int *second);
 
 #endif /* PAUSE_H_ */

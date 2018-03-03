@@ -10,8 +10,16 @@
 #include "tools_cook.h"
 #include "pause.h"
 
+static void	continue_game(sfVector2i mouse_pause, int *pause)
+{
+	if (mouse_pause.x >= 290 && mouse_pause.x <= 290 + 100
+	&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
+		*pause = -1;
+	}
+}
+
 void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
-			int *pause)
+			int *pause, int *second)
 {
 	sfVector2i mouse_pause = sfMouse_getPositionRenderWindow(*window);
 
@@ -19,17 +27,16 @@ void	manege_mouse_pause(sfRenderWindow **window, int *change_window,
 		if (mouse_pause.x >= 170 && mouse_pause.x <= 170 + 100
 		&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
 			*pause = -1;
+			*second = END_TIMER;
 			*change_window = MENU_RESTO;
-		}
-		else if (mouse_pause.x >= 290 && mouse_pause.x <= 290 + 100
-			&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
-			*pause = -1;
 		}
 		else if (mouse_pause.x >= 410 && mouse_pause.x <= 410 + 100
 			&& mouse_pause.y >= 300 && mouse_pause.y <= 300 + 60) {
 			*change_window = -1;
+			*second = END_TIMER;
 			*pause = -1;
 			sfRenderWindow_close(*window);
-		}
+		} else
+			continue_game(mouse_pause, pause);
 	}
 }
